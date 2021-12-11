@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Oswald', sans-serif;
-    background: rgb(2, 0, 36);
+    /* background: rgb(2, 0, 36); */
     background: linear-gradient(#83a4d4, #b6fbff);
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,4 +48,12 @@ th {
 td {
     border: none;
     padding: 5px;
+}
+
+.fab {
+    padding-left: 10px;
+}
+
+td a:hover {
+    font-size: medium;
 }
