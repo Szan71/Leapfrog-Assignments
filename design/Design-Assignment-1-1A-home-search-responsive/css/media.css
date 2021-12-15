@@ -1,0 +1,113 @@
+@media only screen and (min-width:480px) and (max-width:769px) {
+    .whole-wrapper {
+        width: 100%;
+    }
+    .container {
+        width: 100%;
+        margin: 0px auto;
+    }
+    .search-wrapper {
+        display: none;
+    }
+    .logo-wrapper {
+        padding-left: 10px;
+        width: 230px;
+    }
+    .username {
+        display: none;
+    }
+    .user-nav-info ul {
+        display: none;
+    }
+    .user-nav-info {
+        background: url('../images/hamburger-icon.svg');
+        background-size: 50px;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 50px;
+        height: 50px;
+        padding: 15px;
+        cursor: pointer;
+    }
+    .user-options li {
+        margin-right: 20px;
+        margin-left: 11px;
+    }
+    .navbar .user-notification {
+        padding: 10px 0px 0px 10px;
+        float: left;
+    }
+    body {
+        width: 100%;
+    }
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        padding-top: 15px;
+        padding-left: 15px;
+        width: 100%;
+        align-content: center;
+    }
+    .right-sidebar {
+        display: none;
+    }
+    .left-nav {
+        width: 49.5%;
+    }
+    .right-nav {
+        width: 49.5%;
+    }
+    .footer {
+        padding: 18px 18px 18px 18px;
+    }
+    .nav-link-container {
+        left: 0px;
+    }
+}
+
+@media only screen and (min-width:769px) and (max-width:992px) {
+    .whole-wrapper {
+        width: 100%;
+    }
+    .container {
+        width: 100%;
+        margin: 0px auto;
+    }
+    .logo-wrapper img {
+        padding-left: 10px;
+    }
+    .right-sidebar {
+        display: none;
+    }
+    .sidebar {
+        margin-top: 10px;
+    }
+    .main-content {
+        padding-top: 10px;
+    }
+    .user-nav-info {
+        padding-right: 10px;
+    }
+    button {
+        display: none;
+    }
+    .logo-wrapper input {
+        margin-right: 40px;
+    }
+    .search_button_clickable {
+        display: none;
+    }
+    .cross_button_clickable {
+        display: none;
+    }
+    .navbar .user-notification {
+        font-size: 10px;
+    }
+    .footer {
+        padding: 18px 18px 18px 18px;
+    }
+    .user-notification span {
+        margin-right: 10px;
+    }
+}
