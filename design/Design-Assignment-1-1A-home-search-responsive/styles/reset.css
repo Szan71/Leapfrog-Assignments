@@ -1,6 +1,13 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Mulish', 'sans-serif';
+    font-size: 12px;
 }
 
 h1 {
@@ -25,12 +32,6 @@ h5 {
     font-size: 12px;
 }
 
-body {
-    width: 100%;
-    font-family: 'Mulish', sans-serif;
-    font-size: 12px;
-}
-
 .float-left {
     float: left;
 }
@@ -40,9 +41,24 @@ body {
 }
 
 .clearfix:after {
-    content: '';
+    content: " ";
+    visibility: hidden;
+    display: block;
+    height: 0;
     clear: both;
-    display: table;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+}
+
+li a:hover {
+    font-weight: bold;
 }
 
 .blue {
@@ -58,23 +74,4 @@ body {
 .red {
     color: #d53f1e;
     font-weight: bold;
-}
-
-.link:hover {
-    cursor: pointer;
-}
-
-li a {
-    color: black;
-    text-decoration: none;
-}
-
-li a:hover {
-    /* border-bottom: 1px solid black; */
-    font-weight: bold;
-}
-
-.sidebar li a:hover,
-.right-sidebar li a:hover {
-    border-bottom: none;
 }

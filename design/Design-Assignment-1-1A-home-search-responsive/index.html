@@ -2,90 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutangle</title>
-
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/layout.css">
-    <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/media.css">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/media.css">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap" rel="stylesheet">
+    <title>TuTangle Homepage Design</title>
 </head>
 
 <body>
     <div class="whole-wrapper">
-        <div class="header-wrapper">
-            <div class="container clearfix">
-                <div class="logo-wrapper float-left clearfix">
-                    <div class="float-left">
-                        <a href="#" title="TuTangle"><img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/TuTangle-logo.png" alt=""></a>
-                    </div>
-                    <div class="search-wrapper float-right">
-                        <input type="text" value="Search by Term, Member, or Entry Title">
-                        <span class="cross_button_clickable">
-                          <a href=""><img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/cross_button.png" alt=""></a>
-                      </span>
-                        <span class="search_button_clickable">
-                            <a href=""><img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/Search-icon.png" alt=""></a>
-                        </span>
 
-                        <button>SEARCH</button>
+        <!-- Header section -->
+        <div class="header">
+            <div class="container">
+                <div class="header-top">
+                    <div class="logo-wrapper float-left">
+                        <img src="./images/TuTangle-logo.png">
+                    </div>
+                    <div class="search-wrapper float-left">
+                        <input type="text" value="Search by Term, Member, or Entry Title">
+                        <button>Search</button>
+                    </div>
+                    <div class="user-nav float-right">
+                        <div class="username">
+                            <h2>Joe Burros</h2>
+                        </div>
+                        <ul>
+                            <li><a href="#" title="Home">Home</a></li>
+                            <li><a href="#" title="Settings">Settings</a></li>
+                            <li><a href="#" title="Logout">Logout</a></li>
+                        </ul>
                     </div>
                 </div>
-                <div class="float-right user-nav-info">
-                    <div class="username">
-                        <h2>Joe Burros</h2>
-                    </div>
-                    <ul>
-                        <li><a href="#" title="Home">Home</a></li>
-                        <li><a href="#" title="Settings">Settings</a></li>
-                        <li><a href="#" title="Logout">Logout</a></li>
+            </div>
+            <div class="navbar">
+                <div class="container">
+                    <ul class="nav-items float-left">
+                        <li><a href="#" title="Create New Entry">Create New Entry</a></li>
+                        <li><a href="#" title="My Topic Boxes">My Topic Boxes</a></li>
+                        <li><a href="#" title="Friends">Friends</a></li>
+                        <li><a href="#" title="Invite New Member">Invite New Member</a></li>
+                    </ul>
+                    <ul class="float-right user-notification">
+                        <li>
+                            <img src="./images/Topic-box.png" alt=""><span>Topic Boxes Invites - 2</span>
+                        </li>
+                        <li>
+                            <img src="./images/Friend-request.png" alt=""><span>Friend Requests - 0</span>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="navbar">
-            <div class="container clearfix">
-                <ul class="user-options float-left">
-                    <li><a href="#" title="Create New Entry">Create New Entry</a></li>
-                    <li><a href="#" title="My Topic Boxes">My Topic Boxes</a></li>
-                    <li><a href="#" title="Friends">Friends</a></li>
-                    <li><a href="#" title="Invite New Member">Invite New Member</a></li>
-                </ul>
+        <!-- Main wrapper -->
+        <div class="main-wrapper container">
 
-                <ul class="float-right user-notification">
-                    <li>
-                        <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/Topic-box.png" alt=""><span>Topic Boxes Invites - 2</span>
-                    </li>
-                    <li>
-                        <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/Friend-request.png" alt=""><span>Friend Requests - 0</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="body-wrapper container clearfix">
-            <div class="float-left clearfix">
-                <div class="sidebar float-left">
-                    <div class="recent-search">
+            <!-- left sidebar -->
+            <div class="content float-left">
+                <div class="left-sidebar">
+                    <div class="rescent-search">
                         <div class="list-heading">
                             <h2>Recent Searches</h2>
                         </div>
                         <ul>
                             <li class="clearfix">
-                                <span class="float-left"><a href="#" title="Nick Cave">Nick Cave and the <br>
-                    Bad Seeds</a></span>
+                                <span class="float-left"><a href="#" title="Nick Cave">Nick Cave and the <br>Bad Seeds</a></span>
                                 <span class="float-right">
-                  <a href="#"><img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/download-icon.png" alt=""></a>
-                </span>
+                                <a href="#"><img src="./images/download-icon.png" alt=""></a>
+                             </span>
                             </li>
                             <li class="clearfix">
                                 <span class="float-left"><a href="#" title="African Animals">African Animals</a></span>
                                 <span class="float-right">
-                  <a href="#"><img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/download-icon.png" alt=""></a>
-                </span>
+                                <a href="#"><img src="./images/download-icon.png" alt=""></a>
+                            </span>
                             </li>
                         </ul>
                         <div class="list-heading">
@@ -96,57 +91,60 @@
                         <ul class="sidebar-container">
                             <li class="clearfix">
                                 <span class="float-left">
-                  <a href="#" title="Different Versions">Different versions of the Tristan Und Isolde Prelude</a>
-                </span>
+                                  <a href="#" title="Different Versions">Different versions of the Tristan Und Isolde Prelude</a>
+                                </span>
                                 <span class="float-right">
-                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
-                </span>
+                                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
+                                </span>
                             </li>
                             <li class="clearfix">
                                 <span class="float-left">
-                  <a href="#" title="Music">Music</a>
-                </span>
+                                  <a href="#" title="Music">Music</a>
+                                </span>
                                 <span class="float-right">
-                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
-                </span>
+                                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
+                                </span>
                             </li>
                             <li class="clearfix">
                                 <span class="float-left">
-                  <a href="#" title="Guitar">Guitar</a>
-                </span>
+                                    <a href="#" title="Guitar">Guitar</a>
+                                </span>
                                 <span class="float-right">
-                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
-                </span>
+                                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
+                                </span>
                             </li>
                             <li class="clearfix">
                                 <span class="float-left">
-                  <a href="#" title="Bob Cohen">Bob Cohen</a>
-                </span>
+                                  <a href="#" title="Bob Cohen">Bob Cohen</a>
+                                </span>
                                 <span class="float-right">
-                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
-                </span>
+                                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
+                                </span>
                             </li>
                             <li class="clearfix">
                                 <span class="float-left">
-                  <a href="#" title="Mark Schnack">Mark Schnack</a>
-                </span>
+                                  <a href="#" title="Mark Schnack">Mark Schnack</a>
+                                </span>
                                 <span class="float-right">
-                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
-                </span>
+                                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
+                                </span>
                             </li>
                             <li class="clearfix">
                                 <span class="float-left">
-                  <a href="#" title="Jefferson Dickey">Jefferson Dickey</a>
-                </span>
+                                  <a href="#" title="Jefferson Dickey">Jefferson Dickey</a>
+                                </span>
                                 <span class="float-right">
-                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
-                </span>
+                                  <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/indexer.png" alt="">
+                                </span>
                             </li>
                         </ul>
                     </div>
                 </div>
+            </div>
 
-                <div class="main-content float-right">
+            <!-- mid-content -->
+            <div class="article float-left">
+                <div class="mid-content">
                     <h1>Entries</h1>
                     <div class="entries">
                         <div class="entries-nav clearfix">
@@ -191,107 +189,109 @@
                             </a>
                                 </h2>
                                 <p>
-                                    by <a href="#" title="Alan Coe"><span class="blue link">Alan Coe</span></a> | February 10, 2012 | <span class="green">subscribed</span>
+                                    by <a href="#" title="Alan Coe"><span class="blue">Alan Coe</span></a> | February 10, 2012 | <span class="green">subscribed</span>
                                 </p>
                                 <p>
                                     From Topic Box:
-                                    <a href="#" title="My Favourite Movies"><span class="blue link">My Favourite Movies</span></a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="post clearfix">
-                            <div class="float-left">
-                                <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/Mary_Pilot.png" alt="">
-                            </div>
-                            <div class="float-left">
-                                <p class="blue">NEW ENTRY!</p>
-                                <h2>
-                                    <a href="#" title="Blade Runner">
-                              Blade Runner, The Director's Cut
-                            </a>
-                                </h2>
-                                <p>
-                                    by <a href="#" title="Mary Pilot"><span class="blue link">Mary Pilot</span></a> | February 8, 2012
-                                </p>
-                                <p>
-                                    From Topic Box:
-                                    <a href="#" title="Behind the scene"><span class="blue link">Behind the Scene</span></a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="post clearfix">
-                            <div class="float-left">
-                                <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/Jim_Roy.png" alt="">
-                            </div>
-                            <div class="float-left">
-                                <p class="blue">NEW COMMENT!</p>
-                                <h2>
-                                    <a href="#" title="The best french restaurant">
-                              The Best French Restaurant in Chicago?
-                            </a>
-                                </h2>
-                                <p>
-                                    by <a href="#" title="Jim Roy"><span class="blue link">Jim Roy</span></a> | February 7, 2012
-                                </p>
-                                <p>
-                                    From Topic Box:
-                                    <a href="#" title="Chicago Restaurant Reviews"><span class="blue link">Chicago Restaurants
-                                Reviews</span></a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="post clearfix">
-                            <div class="float-left">
-                                <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/John-Peter-Moise.png" alt="">
-                            </div>
-                            <div class="float-left">
-                                <h2>
-                                    <a href="#" title="The meaning of night">
-                              The Meaning of Night, a Dark Book but incredibly well
-                              written
-                            </a>
-                                </h2>
-                                <p>
-                                    by <a href="#" title="John Peter Moise"><span class="blue link">John Peter Moise</span></a> | February 7, 2012 |
-                                    <span class="green">Subscribed</span>
-                                </p>
-                                <p>
-                                    From Topic Box:
-                                    <a href="#" title="Books read and Books to read"><span class="blue link">Books read & Books to
-                                Read</span></a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="post clearfix">
-                            <div class="float-left">
-                                <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/Marianne_Gig.png" alt="">
-                            </div>
-                            <div class="float-left">
-                                <p class="red">TOPIC BOX INVITE!</p>
-                                <h2>
-                                    <a href="#" title="Pea Pesto">
-                              Pea Pesto
-                            </a>
-                                </h2>
-                                <p>
-                                    by <a href="#" title="Marianne Gig"><span class="blue link">Marianne Gig</span></a> | February 7, 2012
-                                </p>
-                                <p>
-                                    From Topic Box:
-                                    <a href="#" title="Favourite Recipies"><span class="blue link">Favourite Recipies</span></a>
+                                    <a href="#" title="My Favourite Movies"><span class="blue">My Favourite Movies</span></a>
                                 </p>
                             </div>
                         </div>
                     </div>
+
+                    <div class="post clearfix">
+                        <div class="float-left">
+                            <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/Mary_Pilot.png" alt="">
+                        </div>
+                        <div class="float-left">
+                            <p class="blue">NEW ENTRY!</p>
+                            <h2>
+                                <a href="#" title="Blade Runner">
+                          Blade Runner, The Director's Cut
+                        </a>
+                            </h2>
+                            <p>
+                                by <a href="#" title="Mary Pilot"><span class="blue">Mary Pilot</span></a> | February 8, 2012
+                            </p>
+                            <p>
+                                From Topic Box:
+                                <a href="#" title="Behind the scene"><span class="blue">Behind the Scene</span></a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="post clearfix">
+                        <div class="float-left">
+                            <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/Jim_Roy.png" alt="">
+                        </div>
+                        <div class="float-left">
+                            <p class="blue">NEW COMMENT!</p>
+                            <h2>
+                                <a href="#" title="The best french restaurant">
+                          The Best French Restaurant in Chicago?
+                        </a>
+                            </h2>
+                            <p>
+                                by <a href="#" title="Jim Roy"><span class="blue">Jim Roy</span></a> | February 7, 2012
+                            </p>
+                            <p>
+                                From Topic Box:
+                                <a href="#" title="Chicago Restaurant Reviews"><span class="blue">Chicago Restaurants
+                            Reviews</span></a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="post clearfix">
+                        <div class="float-left">
+                            <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/John-Peter-Moise.png" alt="">
+                        </div>
+                        <div class="float-left">
+                            <h2>
+                                <a href="#" title="The meaning of night">
+                          The Meaning of Night, a Dark Book but incredibly well
+                          written
+                        </a>
+                            </h2>
+                            <p>
+                                by <a href="#" title="John Peter Moise"><span class="blue">John Peter Moise</span></a> | February 7, 2012 |
+                                <span class="green">Subscribed</span>
+                            </p>
+                            <p>
+                                From Topic Box:
+                                <a href="#" title="Books read and Books to read"><span class="blue">Books read & Books to
+                            Read</span></a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="post clearfix">
+                        <div class="float-left">
+                            <img src="https://szan71.github.io/Leapfrog-Assignments/design/TuTangle%20Homepage%20Design/images/Marianne_Gig.png" alt="">
+                        </div>
+                        <div class="float-left">
+                            <p class="red">TOPIC BOX INVITE!</p>
+                            <h2>
+                                <a href="#" title="Pea Pesto">
+                          Pea Pesto
+                        </a>
+                            </h2>
+                            <p>
+                                by <a href="#" title="Marianne Gig"><span class="blue">Marianne Gig</span></a> | February 7, 2012
+                            </p>
+                            <p>
+                                From Topic Box:
+                                <a href="#" title="Favourite Recipies"><span class="blue">Favourite Recipies</span></a>
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="float-right">
-                <div class="right-sidebar">
+            <!-- right-sidebar -->
+            <div class="content float-left">
+                <div class="right-sidebar float-right">
                     <div class="list-heading">
                         <h2>Video Tutorials</h2>
                     </div>
@@ -308,8 +308,11 @@
                     </ul>
                 </div>
             </div>
+
+
         </div>
 
+        <!-- Footer section -->
         <div class="footer">
             <div class="container clearfix">
                 <div class="float-left">
@@ -326,7 +329,10 @@
                 </div>
             </div>
         </div>
+
+
     </div>
+
 </body>
 
 </html>
