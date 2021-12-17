@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadoo | Travel Agency</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Volkhov:wght@700&display=swap">
+</head>
+
+<body>
+    <div class="main">
+        <header id="header" class="header">
+            <nav class="navbar">
+                <a href="#" class="navbar-brand"><img src="./images/Logo.png" alt="Jadoo Logo"></a>
+                <button id="navbar-toggler" class=" button navbar-toggler"><img src="./images/hamburger-menu.svg" alt=""></button>
+                <ul id="navbar-nav" class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#service">Service</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#destination">Destination</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#booking">Booking</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonial">Testimonial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">Login</a></li>
+                    <li class="nav-item"><a class="btn" href="#!">Sign Up</a></li>
+                    <li class="nav-item dropdown"> <a class="dropdown-toggle" href="#" id="navbarDropdown">EN</a>
+                        <!-- <ul class="dropdown-menu dropdown-menu-end border-0 shadow-lg" style="border-radius:0.3rem;" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#!">EN</a></li>
+                            <li><a class="dropdown-item" href="#!">BN</a></li>
+                        </ul> -->
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- <div class="top-nav clearfix:after">
+                <div class="container">
+                    <div class="logo wrapper">
+                        <a class="brand-logo"><img src="./images/Logo.png" alt="Jadoo logo"></a>
+                    </div>
+                    <nav class="nav-items">
+                        <ul>
+                            <li>
+                                <a href="#" class="navbar-item">Service</a>
+                            </li>
+                            <li>
+                                <a href="#" class="navbar-item">Destination</a>
+                            </li>
+                            <li>
+                                <a href="#" class="navbar-item">Booking</a>
+                            </li>
+                            <li>
+                                <a href="#" class="navbar-item">Testimonial</a>
+                            </li>
+                            <li>
+                                <a href="#" class="navbar-item">Login</a>
+                            </li>
+                            <li>
+                                <a><button>Sign Up</button></a>
+                            </li>
+                            <li>
+                                <a href="#" class="navbar-item">EN</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div> -->
+
+        </header>
+        <div class="body-wrapper">
+
+        </div>
+    </div>
+    <script>
+        var navVisibility = false;
+
+        const abc = document.getElementById('navbar-nav');
+        const bcd = document.getElementById('header');
+        document.getElementById("navbar-toggler").addEventListener('click', function(e) {
+
+            console.log(e);
+            if (navVisibility == false) {
+                abc.style.display = "block";
+                bcd.style.background = '#F0F4F9';
+            } else {
+                abc.style.display = "none";
+            }
+            navVisibility = !navVisibility;
+
+
+        });
+    </script>
+
+</body>
+
+
+</html>
