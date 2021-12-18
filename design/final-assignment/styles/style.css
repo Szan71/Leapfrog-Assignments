@@ -165,8 +165,13 @@ svg {
 }
 
 .card-item-wrapper {
-    width: 33%;
+    width: 100%;
     float: left;
+    margin-top: 20px;
+}
+
+.card-item-wrapper img {
+    border-radius: 36px 36px 0px 0px;
 }
 
 .destination-card {
@@ -240,6 +245,18 @@ svg {
     padding: 10px;
 }
 
+.img-travel {
+    padding: 20px 0px;
+}
+
+.img-travel img {
+    padding-right: 25px;
+}
+
+.heart {
+    margin-left: 130px;
+}
+
 
 /* .services-card:hover::before {
     content: '';
@@ -255,6 +272,9 @@ svg {
 
 @media screen and (min-width: 576px) {
     .services-card {
+        width: 50%;
+    }
+    .card-item-wrapper {
         width: 50%;
     }
 }
@@ -283,6 +303,9 @@ svg {
     .header {
         background: unset !important;
     }
+    .card-item-wrapper {
+        width: 33%;
+    }
     .services-card {
         display: block;
         width: 25%;
@@ -295,6 +318,13 @@ svg {
     .travel-card-wrapper {
         width: 50%;
         float: right;
+    }
+    .travel-guide img {
+        float: left;
+    }
+    .img-travel img {
+        float: left;
+        padding: 10px 10px;
     }
 }
 
