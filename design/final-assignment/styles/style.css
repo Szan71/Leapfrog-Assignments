@@ -156,6 +156,10 @@ svg {
     box-shadow: 0 6.25rem 5rem 0 rgb(0 0 0 / 2%), 0 4.05063rem 2.92813rem 0 rgb(0 0 0 / 2%), 0 2.4075rem 1.5925rem 0 rgb(0 0 0 / 1%), 0 1.25rem 0.8125rem 0 rgb(0 0 0 / 1%), 0 0.50938rem 0.4075rem 0 rgb(0 0 0 / 1%), 0 0.11563rem 0.19687rem 0 rgb(0 0 0 / 0);
 }
 
+.destination-wrapper-cards {
+    height: 100%;
+}
+
 .destination-card {
     box-shadow: 0 6.25rem 5rem 0 rgb(0 0 0 / 2%), 0 4.05063rem 2.92813rem 0 rgb(0 0 0 / 2%), 0 2.4075rem 1.5925rem 0 rgb(0 0 0 / 1%), 0 1.25rem 0.8125rem 0 rgb(0 0 0 / 1%), 0 0.50938rem 0.4075rem 0 rgb(0 0 0 / 1%), 0 0.11563rem 0.19687rem 0 rgb(0 0 0 / 0);
 }
@@ -196,6 +200,44 @@ svg {
 .description-bottom {
     padding-top: 40px;
     padding-bottom: 20px;
+}
+
+.easy-booking {
+    width: 100%;
+    padding: 0px 20px;
+}
+
+.travel-card-wrapper {
+    width: 100%;
+    padding: 0px 20px;
+}
+
+.travel-card {
+    width: max-content;
+    margin: auto;
+    box-shadow: 0 6.25rem 5rem 0 rgb(0 0 0 / 2%), 0 4.05063rem 2.92813rem 0 rgb(0 0 0 / 2%), 0 2.4075rem 1.5925rem 0 rgb(0 0 0 / 1%), 0 1.25rem 0.8125rem 0 rgb(0 0 0 / 1%), 0 0.50938rem 0.4075rem 0 rgb(0 0 0 / 1%), 0 0.11563rem 0.19687rem 0 rgb(0 0 0 / 0);
+    border-radius: 36px;
+}
+
+.travel-card img {
+    border-radius: 36px;
+}
+
+.travel-card {
+    padding: 20px;
+}
+
+.travel-card h5,
+.travel-card p {
+    padding-top: 10px;
+}
+
+.insta-icons {
+    padding-top: 24px;
+}
+
+.insta-icons span {
+    padding: 10px;
 }
 
 
@@ -241,13 +283,18 @@ svg {
     .header {
         background: unset !important;
     }
-    section {
-        padding-top: 7.5rem !important;
-    }
     .services-card {
         display: block;
         width: 25%;
         float: left;
+    }
+    .easy-booking {
+        width: 50%;
+        float: left;
+    }
+    .travel-card-wrapper {
+        width: 50%;
+        float: right;
     }
 }
 
