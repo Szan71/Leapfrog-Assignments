@@ -76,13 +76,40 @@ button {
 }
 
 .sign-up-btn:hover {
-    color: white!important;
+    color: white !important;
     background: black;
 }
 
 .intro-wrapper {
-    padding: 55px 55px;
-    height: 100%
+    padding: 55px;
+    height: 80vh;
+}
+
+.introh1 {
+    font-size: 50px;
+    color: black;
+    line-height: 1.1;
+    color: #181E4B;
+    font-family: "Volkhov", "DM Serif Display", cursive;
+}
+
+.find-out-btn {
+    text-decoration: none;
+    background-color: #F1A501;
+    color: white;
+    background: #F1A501;
+    box-shadow: 0px 20px 35px rgb(241 165 1 / 15%);
+    border-radius: 4px;
+    padding: 8px 12px;
+}
+
+.demo {
+    padding: 10px 12px;
+    border-radius: 50%;
+    color: #DF6951;
+    background-color: #DF6951;
+    border-color: #DF6951;
+    box-shadow: 0 1.25rem 2.1875rem 0 rgb(241 165 1 / 15%);
 }
 
 .bg-holder {
@@ -130,6 +157,10 @@ button {
     margin-bottom: 4rem;
 }
 
+.services-wrapper {
+    margin-top: 470px;
+}
+
 .services-card {
     width: 100%;
     text-align: center;
@@ -162,6 +193,10 @@ svg {
     height: 100%;
 } */
 
+.destination-wrapper {
+    margin-top: 420px;
+}
+
 .destination-card {
     box-shadow: 0 6.25rem 5rem 0 rgb(0 0 0 / 2%), 0 4.05063rem 2.92813rem 0 rgb(0 0 0 / 2%), 0 2.4075rem 1.5925rem 0 rgb(0 0 0 / 1%), 0 1.25rem 0.8125rem 0 rgb(0 0 0 / 1%), 0 0.50938rem 0.4075rem 0 rgb(0 0 0 / 1%), 0 0.11563rem 0.19687rem 0 rgb(0 0 0 / 0);
 }
@@ -179,6 +214,7 @@ svg {
 .destination-card {
     width: max-content;
     margin: auto;
+    width: 90%;
 }
 
 .description-top {
@@ -202,6 +238,10 @@ svg {
 
 .description-top {
     padding: 20px;
+}
+
+.booking {
+    margin-top: 150px;
 }
 
 .description-bottom {
@@ -417,6 +457,12 @@ svg {
     text-align: center;
 }
 
+.nav-row-1,
+.nav-row-2,
+.nav-row-3 {
+    margin: 0px 40px;
+}
+
 
 /* .services-card:hover::before {
     content: '';
@@ -468,6 +514,7 @@ svg {
         content: "";
         clear: left;
         display: block;
+        margin-left: 10%;
     }
     .footer-navs,
     .copyright {
@@ -530,12 +577,6 @@ svg {
     }
 }
 
-.services-wrapper,
-.destination-wrapper,
-.booking {
-    padding-top: 200px;
-}
-
 @media screen and (min-width: 1200px) {
     .navbar ul {
         padding-left: 20%;
@@ -595,4 +636,8 @@ svg {
         float: none;
         font-size: 14px;
     }
+}
+
+.destination-wrapper-cards {
+    overflow: auto;
 }
