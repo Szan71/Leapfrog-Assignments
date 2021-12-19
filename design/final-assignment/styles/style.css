@@ -263,6 +263,160 @@ svg {
     padding: 19px;
 }
 
+.texts {
+    width: 100%;
+}
+
+.testimonials {
+    width: 100%;
+    border-radius: 36px;
+    box-shadow: 0 6.25rem 5rem 0 rgb(0 0 0 / 2%), 0 4.05063rem 2.92813rem 0 rgb(0 0 0 / 2%), 0 2.4075rem 1.5925rem 0 rgb(0 0 0 / 1%), 0 1.25rem 0.8125rem 0 rgb(0 0 0 / 1%), 0 0.50938rem 0.4075rem 0 rgb(0 0 0 / 1%), 0 0.11563rem 0.19687rem 0 rgb(0 0 0 / 0);
+}
+
+.partners {
+    width: 100%;
+}
+
+.margin-items {
+    margin: 0px auto;
+    padding: 20px;
+}
+
+.partner1 {
+    align-items: center;
+    justify-content: center;
+    width: 253px;
+    border-radius: 36px;
+    box-shadow: 0 6.25rem 5rem 0 rgb(0 0 0 / 2%), 0 4.05063rem 2.92813rem 0 rgb(0 0 0 / 2%), 0 2.4075rem 1.5925rem 0 rgb(0 0 0 / 1%), 0 1.25rem 0.8125rem 0 rgb(0 0 0 / 1%), 0 0.50938rem 0.4075rem 0 rgb(0 0 0 / 1%), 0 0.11563rem 0.19687rem 0 rgb(0 0 0 / 0);
+}
+
+.logos {
+    text-align: center;
+    margin: 5%;
+}
+
+.logo:hover {
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.subscribe {
+    text-align: center;
+    margin: 5%;
+}
+
+.subscribe-container {
+    background: #dfd7f9;
+    border-radius: 60px 20px 20px 20px;
+}
+
+.subscribe-content {
+    padding: 1rem;
+}
+
+.subscribe p {
+    color: #5e6282;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+}
+
+.subscribe .send-icon {
+    width: 3rem;
+    height: 3rem;
+    float: right;
+    margin-top: -1%;
+    margin-right: -1%;
+}
+
+.email-section {
+    margin-top: 2rem;
+}
+
+.email-section button {
+    background: #ff8b6b;
+    color: #ffffff;
+    font-family: "Open Sans", sans-serif;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 10px;
+}
+
+.email-section input {
+    border: none;
+    font-size: 1rem;
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 0.5rem;
+    width: 50%;
+}
+
+.email-section img {
+    margin-top: 1%;
+    margin-right: 1%;
+    width: 1rem;
+    height: 1rem;
+}
+
+.footer {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    margin: 2% 5%;
+}
+
+.footer-navs ul li {
+    list-style: none;
+}
+
+.footer-navs ul li a {
+    text-decoration: none;
+    color: #5e6282;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.footer-navs ul li a:hover {
+    text-decoration: underline;
+}
+
+.company-desc h2 {
+    color: #181e4b;
+}
+
+.company-desc p {
+    color: #5e6282;
+    font-size: 1rem;
+}
+
+.footer-navs {
+    margin: 3%;
+}
+
+.footer-navs h4 {
+    color: #080809;
+    margin: 1%;
+}
+
+.nav-row-1,
+.nav-row-2,
+.nav-row-3 {
+    margin-top: 3%;
+}
+
+.outbound p {
+    color: #5e6282;
+    margin: 2%;
+    font-size: 1rem;
+}
+
+.copyright {
+    color: #5e6282;
+    font-size: 0.75rem;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+}
+
 
 /* .services-card:hover::before {
     content: '';
@@ -282,6 +436,47 @@ svg {
     }
     .card-item-wrapper {
         width: 100%;
+    }
+    .logo {
+        width: 50%;
+        height: 50%;
+    }
+    .logo:nth-child(-n + 2) {
+        float: left;
+    }
+    .logo:nth-child(3) {
+        text-align: center;
+    }
+    .logo:nth-last-child(-n + 2) {
+        float: right;
+    }
+    .logo-container:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    .company-desc,
+    .outbound {
+        float: left;
+    }
+    .nav-row-1,
+    .nav-row-2,
+    .nav-row-3 {
+        float: left;
+    }
+    .footer-navs:after {
+        content: "";
+        clear: left;
+        display: block;
+    }
+    .footer-navs,
+    .copyright {
+        float: right;
+    }
+    .footer:after {
+        content: "";
+        clear: both;
+        display: block;
     }
 }
 
@@ -335,6 +530,12 @@ svg {
     }
 }
 
+.services-wrapper,
+.destination-wrapper,
+.booking {
+    padding-top: 200px;
+}
+
 @media screen and (min-width: 1200px) {
     .navbar ul {
         padding-left: 20%;
@@ -344,5 +545,54 @@ svg {
     }
     .services-card {
         width: 25%;
+    }
+    .logo {
+        float: left;
+        margin: 0 5%;
+        width: 10%;
+    }
+    .logo-container {
+        margin: 2%;
+    }
+    .logo-container:after {
+        content: "";
+        clear: left;
+        display: block;
+    }
+    .nav-row-1,
+    .nav-row-2,
+    .nav-row-3 {
+        float: left;
+    }
+    .footer-navs {
+        margin-top: 0;
+        margin-left: 18%;
+    }
+    .footer-navs:after {
+        content: "";
+        clear: left;
+        display: block;
+    }
+    .footer-navs ul li {
+        font-size: 18px;
+    }
+    .company-desc,
+    .footer-navs {
+        float: left;
+    }
+    .outbound {
+        float: right;
+    }
+    .company-desc p {
+        font-size: 13px;
+    }
+    .footer:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+    .copyright {
+        float: none;
+        font-size: 14px;
     }
 }
