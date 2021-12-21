@@ -11,26 +11,24 @@ var arr = [{
     name: 'Andrew'
 }];
 
-console.log(arr);
-
 // Bubble sort
 function sortBy(arr, key) {
-    let arr1 = [...arr]; // spread operator -- spreading the value 
+    // let arr1 = [...arr}; // spread operator -- spreading the value ES6
+    let arr1 = [].concat(arr);
     for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < (arr1.length - i - 1); j++) {
+            if (arr1[j][key] > arr1[j + 1][key]) {
 
-        for (var j = 0; j < (arr.length - i - 1); j++) {
-
-            console.log(arr[j][key]);
-            if (arr[j][key] > arr[j + 1][key]) {
-
-                var temp = arr[j]
-                arr[j] = arr[j + 1]
-                arr[j + 1] = temp
+                var temp = arr1[j]
+                arr1[j] = arr1[j + 1]
+                arr1[j + 1] = temp
             }
         }
     }
-    console.log(arr1);
+    console.log("Sorted by", key, ":", arr1);
 }
 
-
 var sorted = sortBy(arr, 'name');
+console.log("Unsorted array: ", arr);
+
+// sortBy(arr, 'id'); Sorted by id
