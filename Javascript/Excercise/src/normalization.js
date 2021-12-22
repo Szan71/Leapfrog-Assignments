@@ -23,7 +23,7 @@ processFunction(input);
 console.log(output);
 
 
-function processFunction(arrData) {
+function processFunction(input) {
     for (let obj in input) {
 
         output[Object.keys(output).length] = { id: input[obj]['id'], name: input[obj]['name'] }
