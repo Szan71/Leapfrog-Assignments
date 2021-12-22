@@ -1,6 +1,7 @@
 // Write a program to normalize a given input to get the expected output.
 // https://gist.github.com/nishanbajracharya/8fe38807b3ad074a7da2072c7b8e701b
 
+var output = {};
 var input = {
     '1': {
         id: 1,
@@ -17,29 +18,36 @@ var input = {
     }
 };
 
-// function normalize(parent) {
-//     if (parent && parent.children) {
-//         for (var i = 0, l = parent.children.length; i < l; ++i) {
-//             var child = parent.children[i];
-//             child.index = i;
-//             if (!child.parentId) child.parentId = parent.id || '0';
-//             normalize(child);
-//         }
-//     }
-//     console.log(parent);
-// }
 
-function runRecursive(data) {
-    for (var i = 0, l = data.length; i < l; i++) {
-        var current = data[i];
+processFunction(input);
+console.log(output);
 
-        parentid = current.id == null ? '0' : current.id;
-        current.index = i;
-        if (current.children && current.children.length > 0) {
-            runRecursive(current.children);
-        };
-    };
-};
 
-var answer = runRecursive(input.children);
-console.log(answer);
+function processFunction(arrData) {
+    for (let obj in input) {
+
+        output[Object.keys(output).length] = { id: input[obj]['id'], name: input[obj]['name'] }
+
+        if (input[obj]['children'].length > 0) {
+            manageChildren(input[obj]['children'], Object.keys(output).length)
+        }
+    }
+}
+
+function manageChildren(arrayData, index) {
+    arrayData.forEach(i => {
+
+        output[Object.keys(output).length] = { id: i['id'], name: i['name'] }
+
+
+        if (!output[index - 1]['children']) {
+            output[index - 1]['children'] = [];
+        }
+        output[index - 1]['children'].push(i['id']);
+
+
+        if (i['children'] && i['children'].length > 0) {
+            manageChildren(i['children'], Object.keys(output).length)
+        }
+    });
+}
