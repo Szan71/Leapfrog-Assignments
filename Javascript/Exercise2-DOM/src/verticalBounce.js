@@ -8,25 +8,24 @@ function move() {
     let top = 0;
     const id = setInterval(frame, 10);
 
+    let direction = 1;
+
     function frame() {
         ball.style.width = "50px";
         ball.style.height = "50px";
         ball.style.borderRadius = "40px"
         ball.style.position = "absolute";
-        ball.style.left = '350px';
+        ball.style.left = '50%';
         ball.style.background = "#47a";
         if (top == 447) {
-            // console.log('Hello');
-            for (var i = 447; i == 0; i--) {
-                ball.style.top = i + 'px';
-                element.append(ball);
-            }
-        } else {
-            top++;
-            ball.style.top = top + 'px';
-            console.log(top);
-            element.append(ball);
+            direction = -1;
+        } else if (top == 0) {
+            direction = 1;
         }
+        top += direction;
+        ball.style.top = top + 'px';
+        console.log(top);
+        element.append(ball);
     }
 }
 
