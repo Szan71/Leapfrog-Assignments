@@ -21,13 +21,12 @@ class point {
     }
 }
 
-let point1 = new point(250, 300)
-let point2 = new point(160, 350)
-let point3 = new point(190, 130)
-let point4 = new point(50, 110)
-let point5 = new point(156, 97)
-let point6 = new point(120, 100)
-let point7 = new point(300, 100)
-let point8 = new point(450, 200)
-let point9 = new point(20, 100)
-let point10 = new point(250, 250)
+let x = 10,
+    y = 10;
+for (let i = 0; i < 10; i++) {
+
+    new point(x, y)
+    x = x + 40;
+    y = y + 50
+
+}

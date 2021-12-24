@@ -9,4 +9,5 @@
     height: 500px;
     border: 3px solid black;
     /* float: left; */
+    position: relative;
 }
