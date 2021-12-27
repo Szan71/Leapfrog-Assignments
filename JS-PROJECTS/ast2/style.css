@@ -2,3 +2,11 @@
     margin: 0px;
     padding: 0px;
 }
+
+.carousel-container {
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+}

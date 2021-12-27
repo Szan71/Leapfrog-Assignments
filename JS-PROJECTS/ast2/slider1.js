@@ -72,9 +72,10 @@ function imageCarousel(carouselContainer, transitionTime, holdTime) {
          * Triggers a function when an indicator dot is clicked.
          */
         carouselIndicator.addEventListener('click', () => {
-            /**
-             * Runs every 17 milliseconds until the interval is cleared.
-             */
+            clearInterval(slide)
+                /**
+                 * Runs every 17 milliseconds until the interval is cleared.
+                 */
             interval = setInterval(() => {
                 /**
                  * If clicked indicator dot is same as current pos, it clears the interval.
