@@ -1,7 +1,7 @@
 class PlayGround {
     constructor() {
         this.height = 700;
-        this.speed = 5;
+        this.speed = 3;
     }
 
     initialize = () => {

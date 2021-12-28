@@ -1,13 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&family=Oswald:wght@300&family=Quicksand:wght@300;400;700&display=swap');
 * {
     margin: 0;
     padding: 0;
 }
 
 body {
-    background-color: seagreen;
+    background: #83a4d4;
+    font-family: 'Oswald', sans-serif;
+    background-size: cover;
 }
 
 .container {
     width: 650px;
     margin: auto;
+}
+
+.play {
+    border: 1px solid #000;
+    position: absolute;
+    padding: 300px 200px;
+}
+
+.playerCar {
+    height: 100px;
+    width: 50px;
+    position: absolute;
+    bottom: 0px;
+    left: 100px;
+    right: 0px;
+}
+
+.playground {
+    position: relative;
+    width: 630px;
+    margin: auto;
+    background-color: #2d3436;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.lane1 {
+    height: 100px;
+    width: 10px;
+    position: absolute;
+    background-color: #fff;
+    margin-left: 200px;
+}
+
+.lane2 {
+    height: 100px;
+    width: 10px;
+    position: absolute;
+    background-color: #fff;
+    margin-left: 400px;
+}
+
+.enemyCar1,
+.enemyCar2,
+.enemyCar3 {
+    height: 100px;
+    width: 50px;
+    position: absolute;
+}
+
+.enemyCar1 {
+    top: 100px;
+    left: 100px;
+}
+
+.enemyCar2 {
+    top: 500px;
+    left: 300px;
+}
+
+.enemyCar3 {
+    top: 100px;
+    left: 500px;
+}
+
+.play-button,
+.play-again {
+    position: absolute;
+    padding: 25px;
+    top: 462px;
+    z-index: 1;
+    left: 220px;
+    color: #fff;
+    font-size: 14px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.play-button,
+.play-again:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.play-again {
+    display: none;
+}
+
+.after-crash {
+    display: none;
+}
+
+.score {
+    text-align: center;
+}
+
+.play p {
+    padding: 10px 0px;
+}
+
+.aware {
+    color: skyblue;
+    font-weight: bold;
 }

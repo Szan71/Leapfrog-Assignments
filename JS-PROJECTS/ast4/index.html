@@ -11,13 +11,49 @@
 
 <body>
     <div class="container">
+        <div class="car-game">
+            <!-- <div class="score">
+                <h3>Score: </h1>
+                    <p id="score">0 </p>
+                    <h3>Speed</h1>
+                        <p id="speed"> 0 frame/sec </p>
+            </div> -->
+            <div class="play">
+                <div class="before-start">
 
-        <div class="playground">
+                    <h1>Welcome to 2d Car Game</h1>
+                    <h4>Short instruction</h4>
+                    <p>Press Key Left or Right To Move!!</p>
+                    <p>View the score at the top of the screen</p> <br>
+                </div>
+                <div class="after-crash">
+                    <h1>You Crashed!!!</h1>
+                    <h4>Your Score: </h4>
+                    <h5 id="result"></h5>
+                    <h4>Highest Score: </h4>
+                    <h5 id="highest"></h5>
+                </div>
+                <br>
+                <button class="play-button">Play</button>
+                <button class="play-again">Play Again</button>
 
+
+
+            </div>
+            <div class="playground">
+                <div class="score" style="font-weight: 500;">
+                    <h3 style="color:#83a4d4;">Score: </h1>
+                        <p id="score">0 </p>
+                        <h3 style="color:#83a4d4;">Speed</h1>
+                            <p id="speed"> 0 frame/sec </p>
+                </div>
+            </div>
         </div>
     </div>
-    </div>
-
+    <script src="src/playground.js "></script>
+    <script src="src/car.js "></script>
+    <script src="src/index.js "></script>
+    <script src="src/utils.js "></script>
 </body>
 
 </html>
