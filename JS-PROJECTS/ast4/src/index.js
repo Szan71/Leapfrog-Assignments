@@ -44,5 +44,5 @@ document.querySelector('.play-button').addEventListener('click', function() {
 
 
 document.querySelector('.play-again').addEventListener('click', () => {
-    init();
+    window.location.reload();
 });

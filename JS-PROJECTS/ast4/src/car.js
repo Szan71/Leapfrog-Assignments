@@ -9,7 +9,6 @@ class Car {
         this.carLeft = 0;
         this.enemySpeed = 5;
         this.score = 0;
-        this.bulletCount = 10;
     }
 
     playerCar = () => {
