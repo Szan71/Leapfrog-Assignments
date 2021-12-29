@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flappybird</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <img id='sprites' src='images/sprites.png'>
+
+    <canvas id='canvas'></canvas>
+    <div class="before-start">
+        <img src="images/bg.png" alt="imageBackground">
+        <img src="images/start.png" class="start-button" alt="Start Button">
+        <p>Press any key to Start the Game or Click on start button</p>
+    </div>
+    <div class="after-crash">
+        <div class="display-score">
+            <h4>Score: </h4>
+            <p id="score"></p>
+            <h4>High Score: </h4>
+            <p id="high-score"></p>
+        </div>
+        <p class="restart-instruction">Press Space to Re-Start the Game </p>
+    </div>
+    <p id="instruction">Press Up Arrow to move the Flappy</p>
+    <script src="src/constants.js"></script>
+    <script src="src/playground.js"></script>
+    <script src="src/sprite.js"></script>
+    <script src='src/utils.js'></script>
+    <script src='src/controller.js'></script>
+    <script src="src/index.js"></script>
+</body>
+
+</html>

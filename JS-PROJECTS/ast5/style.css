@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #404040;
+}
+
+#sprites {
+    display: none;
+}
+
+#canvas {
+    margin: auto;
+    border: 1px solid black;
+    display: none;
+}
+
+#instruction {
+    display: block;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+}
+
+#instructions {
+    color: #000;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
+
+.before-start {
+    position: relative;
+    height: 500px;
+    width: 285px;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.after-crash {
+    position: relative;
+    height: 250px;
+    width: 285px;
+    margin: auto;
+}
+
+.before-start img {
+    height: 500px;
+    width: 285px;
+}
+
+.before-start .start-button {
+    position: absolute;
+    top: 150px;
+    right: 95px;
+    height: 40px;
+    width: 90px;
+}
+
+.before-start p {
+    position: absolute;
+    top: 230px;
+    right: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+}
+
+#instructions {
+    display: none;
+}
+
+.after-crash {
+    display: none;
+}
+
+.display-score {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 15px;
+    line-height: 25px;
+}
+
+.restart-instruction {
+    background-color: red;
+    color: #fff;
+    padding: 5px;
+    margin-top: 15px;
+}
