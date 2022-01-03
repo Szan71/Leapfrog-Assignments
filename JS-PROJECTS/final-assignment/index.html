@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/gif" href="favicon/apple.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="heading">
+            <h1>Phone Simulator</h1>
+        </div>
+        <div class="emulator">
+            <div class="phone">
+                <!-- <video class="cam"></video> -->
+                <div class="date-time">
+                    <img src="./images/lock.svg" alt="">
+                    <p id="time"></p>
+                    <p id="date"></p>
+                </div>
+                <div class="lockscreen-bottom">
+                    <div class="lockscreen-bottom-right">
+                        <img src="./images/flashlight.svg" class="cam-bottom" alt="">
+                    </div>
+                    <div class="lockscreen-bottom-middle">
+                        <p>Press anywhere to unlock</p>
+                        <img src="./images/dot_grey.svg" alt="sliders">
+                        <img src="./images/dot_grey.svg" alt="sliders">
+                    </div>
+                    <div class="lockscreen-bottom-right">
+                        <img src="./images/camera_button.svg" class="cam-bottom" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="passcode center">
+                <p>Enter Passcode</p>
+                <div class="slider">
+                    <img src="./images/dot_grey.svg" alt="">
+                    <img src="./images/dot_grey.svg" alt="">
+                    <img src="./images/dot_grey.svg" alt="">
+                    <img src="./images/dot_grey.svg" alt="">
+                </div>
+
+                <div class="buttons">
+                    <input onClick="set(this)" type="submit" value="9" />
+                    <input onClick="set(this)" type="submit" value="8" />
+                    <input onClick="set(this)" type="submit" value="7" />
+                </div>
+                <div class="buttons">
+                    <input onClick="set(this)" type="submit" value="6" />
+                    <input onClick="set(this)" type="submit" value="5" />
+                    <input onClick="set(this)" type="submit" value="4" />
+                </div>
+                <div class="buttons">
+                    <input onClick="set(this)" type="submit" value="3" />
+                    <input onClick="set(this)" type="submit" value="2" />
+                    <input onClick="set(this)" type="submit" value="1" />
+                </div>
+                <div class="buttons">
+                    <input onClick="set(this)" type="submit" value="0" />
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <script src="src/dateTime.js"></script>
+    <script src="src/unlock.js"></script>
+    <script src="src/passcode.js"></script>
+    <script src="src/camera.js"></script>
+    <script src="src/homeScreen.js"></script>
+</body>
+
+</html>

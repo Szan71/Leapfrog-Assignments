@@ -1,0 +1,182 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    color: white;
+    /* font-family: -apple-system, BlinkMacSystemFont, sans-serif; */
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+}
+
+.heading {
+    color: black;
+    margin: 0% auto;
+    width: 40%;
+    text-align: center;
+    padding: 20px;
+}
+
+.emulator {
+    background: url('../images/final1.png') no-repeat;
+    margin: 0% auto;
+    height: 550px;
+    width: 280px;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.phone {
+    background: url('../images/wallpaper.png') no-repeat;
+    background-position: center;
+    height: 400px;
+    width: 260px;
+    position: absolute;
+    top: 70px;
+    left: 10px;
+    background-color: white;
+}
+
+.date-time {
+    color: white;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.date-time img {
+    height: 24px;
+    width: 35px;
+}
+
+.date-time #time {
+    font-size: 40px;
+    font-weight: 300;
+}
+
+.lockscreen-bottom {
+    color: white;
+    text-align: center;
+    padding-top: 225px;
+    font-size: 12px;
+    display: flex;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.lockscreen-bottom-middle {
+    width: 70%;
+    margin: 0% auto;
+    padding-top: 10px;
+}
+
+.lockscreen-bottom-middle img {
+    height: 10px;
+    opacity: 0.5;
+    filter: brightness(200%);
+}
+
+.lockscreen-bottom-right {
+    width: 40px;
+    height: 40px;
+    float: right;
+    padding-top: 10px;
+    border-radius: 26px;
+    background: navajowhite;
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.slider img {
+    height: 10px;
+    opacity: 0.5;
+    margin: 0px 5px;
+}
+
+.center {
+    text-align: center;
+}
+
+
+/* Passcode section */
+
+.passcode {
+    padding-top: 100px;
+    display: none;
+    filter: brightness(200%);
+}
+
+.slider {
+    border-radius: 5px;
+    height: 10px;
+    filter: brightness(200%);
+}
+
+.passcode p {
+    font-size: 20px;
+}
+
+.buttons {
+    margin-left: 0%;
+}
+
+.passcode input {
+    height: 60px;
+    width: 60px;
+    margin: 10px 4px;
+    font-size: 25px;
+    color: white;
+    border: 3px solid white;
+    border-radius: 35px;
+    cursor: pointer;
+    background: transparent;
+}
+
+.passcode input:hover {
+    background: revert;
+}
+
+
+/* camera */
+
+.cam-bottom {
+    width: 25px;
+    height: 20px!important;
+}
+
+.clock {
+    width: 200px;
+    height: 200px;
+    border: 20px solid white;
+    margin: 25px 30px;
+    border-radius: 100%;
+    position: relative;
+    padding: 22px;
+    box-shadow: 0 0 0 4px rgb(0 0 0 / 10%), inset 0 0 0 3px #efefef, inset 0 0 10px black, 0 0 10px rgb(0 0 0 / 20%);
+}
+
+.clock-face {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px);
+}
+
+.hand {
+    width: 50%;
+    height: 6px;
+    background: black;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: 0.3s all;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
