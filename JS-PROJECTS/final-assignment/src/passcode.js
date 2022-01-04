@@ -11,7 +11,7 @@ function set($event) {
 
         pwd.push(value);
         num = +pwd.join("");
-        if (num === 1234) {
+        if (num === 0000) {
             var audio = new Audio('./sounds/unlock.mp3');
             audio.play();
             homeScreen();
