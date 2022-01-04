@@ -16,7 +16,13 @@ lockScreen.addEventListener("click", () => {
 cameraBtn[0].addEventListener("click", (event) => {
     event.stopPropagation();
     console.log('Flashlight!');
-    lockScreen.style.background = "white";
+    var flashlight = document.createElement("div");
+    lockScreen.appendChild(flashlight);
+    flashlight.style.background = "white";
+    flashlight.style.height = '400px';
+    flashlight.style.width = '260px';
+    flashlight.style.position = 'absolute';
+    flashlight.style.top = '1px';
 
 });
 
