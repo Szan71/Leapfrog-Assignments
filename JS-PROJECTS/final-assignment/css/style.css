@@ -18,7 +18,7 @@ body {
 .heading {
     color: black;
     margin: 0% auto;
-    width: 40%;
+    width: 100%;
     text-align: center;
     padding: 20px;
 }
@@ -154,9 +154,9 @@ body {
 /* clock */
 
 .clock {
-    width: 250px;
-    height: 250px;
-    margin-left: 5px;
+    width: 220px;
+    height: 220px;
+    margin-left: 20px;
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -259,7 +259,7 @@ body {
 /* (B) CONTAINER */
 
 #cal-wrap {
-    max-width: 600px;
+    height: 400px;
 }
 
 

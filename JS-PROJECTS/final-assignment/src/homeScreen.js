@@ -16,6 +16,8 @@ function homeScreen() {
     homescreen.style.left = '10px';
     homescreen.style.cursor = 'pointer';
     homescreen.style.overflow = 'auto';
+
+    // row 1
     var icons = document.createElement("div");
     icons.style.display = 'flex';
     icons.style.height = '70px';
@@ -38,6 +40,7 @@ function homeScreen() {
     icon3.style.margin = '0px 7px';
     icon4.style.margin = '0px 7px';
 
+    // camera
     icon1.addEventListener('click', () => {
 
         console.log('Camera');
@@ -48,22 +51,26 @@ function homeScreen() {
         cameraHome.style.top = '1px';
     });
 
+
+    // maps
     icon2.addEventListener('click', () => {
         icons.style.display = 'none';
+        icons_row2.style.display = 'none';
         var maps = document.createElement("div");
         homescreen.appendChild(maps);
         maps.innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.27689198518!2d85.29111310543334!3d27.709031933706044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1641204469061!5m2!1sen!2snp" width="260" height="396" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
 
     });
 
-
+    // calendar with events
     icon4.addEventListener('click', () => {
         icons.style.display = 'none';
+        icons_row2.style.display = 'none';
         homescreen.style.background = 'white';
 
         var calWrap = document.createElement("div");
         homescreen.appendChild(calWrap);
-        calWrap.setAttribute("id", "cal-wrap")
+        calWrap.setAttribute("id", "cal-wrap");
 
         var calDate = document.createElement("div");
         calDate.setAttribute("id", "cal-date");
@@ -125,6 +132,7 @@ function homeScreen() {
     icon3.addEventListener('click', () => {
         homescreen.style.background = '#091921';
         icons.style.display = 'none';
+        icons_row2.style.display = 'none';
         console.log('Clock');
 
 
@@ -186,62 +194,39 @@ function homeScreen() {
 
         });
 
+    });
 
+    var icons_row2 = document.createElement("div");
+    icons_row2.style.display = 'flex';
+    icons_row2.style.height = '70px';
+    icons_row2.style.padding = '10px 0px';
+    homescreen.appendChild(icons_row2);
+    var icon21 = document.createElement('img');
+    var icon22 = document.createElement('img');
+    var icon23 = document.createElement('img');
+    var icon24 = document.createElement('img');
+    icon21.src = "./images/youtube.svg";
+    icon22.src = "./images/apple-music.svg";
+    icon23.src = "./images/calculator.svg";
+    icon24.src = "./images/weather.svg";
+    icons_row2.appendChild(icon21);
+    icons_row2.appendChild(icon22);
+    icons_row2.appendChild(icon23);
+    icons_row2.appendChild(icon24);
+    icon21.style.margin = '0px 7px';
+    icon22.style.margin = '0px 7px';
+    icon23.style.margin = '0px 7px';
+    icon24.style.margin = '0px 7px';
 
-
-
-
-        // var clockFace = document.createElement("div");
-        // clockFace.classList.add("clock-face");
-        // clock.appendChild(clockFace);
-        // Hour = document.createElement("div");
-        // Minute = document.createElement("div");
-        // Seconds = document.createElement("div");
-        // Hour.classList.add("hand", "hand-hour");
-        // Minute.classList.add("hand", "hand-minute");
-        // Seconds.classList.add("hand", "hand-seconds");
-        // clockFace.appendChild(Hour);
-        // clockFace.appendChild(Minute);
-        // clockFace.appendChild(Seconds);
-
-        // var digitalClock = document.createElement("H1");
-        // clock.appendChild(digitalClock);
-        // digitalClock.style.color = 'black';
-        // digitalClock.style.position = 'relative';
-        // digitalClock.style.textAlign = 'center';
-        // digitalClock.style.top = '70px';
-
-        // var hourHand = document.querySelector('.hand-hour');
-        // var minuteHand = document.querySelector('.hand-minute');
-        // var secondHand = document.querySelector('.hand-seconds');
-
-        // function getTime() {
-        //     const now = new Date();
-
-        //     const seconds = now.getSeconds();
-        //     const secondsDegree = (((seconds / 60) * 360) + 90);
-        //     secondHand.style.transform = `rotate(${secondsDegree}deg)`;
-
-
-        //     const minutes = now.getMinutes();
-        //     const minutesDegree = (((minutes / 60) * 360) + 90);
-        //     minuteHand.style.transform = `rotate(${minutesDegree}deg)`;
-
-
-        //     const hours = now.getHours();
-        //     const hoursDegree = (((hours / 60) * 360) + 90);
-        //     hourHand.style.transform = `rotate(${hoursDegree}deg)`;
-
-        //     var fullTime = (hours < 10 ? '0' : '') + (hours) + ":" + (minutes < 10 ? '0' : '') + (minutes) + ":" + (seconds < 10 ? '0' : '') + (seconds);
-        //     digitalClock.innerHTML = fullTime;
-
-        // }
-
-        // setInterval(getTime, 1000);
-
-
+    icon21.addEventListener('click', () => {
+        icons.style.display = 'none';
+        icons_row2.style.display = 'none';
+        var youtube = document.createElement("div");
+        homescreen.appendChild(youtube);
+        youtube.innerHTML = `<iframe width="260" height="396" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
     });
+
 
 
 }

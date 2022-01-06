@@ -53,7 +53,7 @@ var cal = {
 
         // (B4) APPEND YEARS SELECTOR
         // Set to 10 years range. Change this as you like.
-        for (let i = nowYear - 10; i <= nowYear + 10; i++) {
+        for (let i = nowYear - 5; i <= nowYear + 5; i++) {
             let opt = document.createElement("option");
             opt.value = i;
             opt.innerHTML = i;
