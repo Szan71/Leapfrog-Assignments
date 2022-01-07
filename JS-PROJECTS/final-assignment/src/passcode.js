@@ -1,7 +1,7 @@
 const pwd = [];
 var num;
 
-function set($event) {
+function passCheck($event) {
     var audio1 = new Audio('./sounds/passcode.mp3');
     audio1.play();
 
