@@ -59,7 +59,7 @@ function homeScreen() {
         icons_row2.style.display = 'none';
         var maps = document.createElement("div");
         homescreen.appendChild(maps);
-        maps.innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.27689198518!2d85.29111310543334!3d27.709031933706044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1641204469061!5m2!1sen!2snp" width="260" height="396" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
+        maps.innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.27689198518!2d85.29111310543334!3d27.709031933706044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1641204469061!5m2!1sen!2snp" width="260" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
 
     });
 
@@ -231,7 +231,7 @@ function homeScreen() {
         icons_row2.style.display = 'none';
         var youtube = document.createElement("div");
         homescreen.appendChild(youtube);
-        youtube.innerHTML = `<iframe width="260" height="396" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+        youtube.innerHTML = `<iframe width="260" height="400" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
     });
 
@@ -331,8 +331,8 @@ function homeScreen() {
         let pPause = document.querySelector('#play-pause'); // element where play and pause image appears
 
         songIndex = 0;
-        var songs = ['./sounds/peaches.mp3', './sounds/STAY.mp3', './sounds/LoveYourself.mp3', './sounds/good4u.mp3']; // object storing paths for audio objects
-        var thumbnails = ['./images/Peaches.jpg', './images/stay.jpg', './images/Peaches.jpg', './images/olivia.jpg']; // object storing paths for album covers and backgrounds
+        var songs = ['./sounds/Peaches.mp3', './sounds/STAY.mp3', './sounds/LoveYourself.mp3', './sounds/good4u.mp3']; // object storing paths for audio objects
+        var thumbnails = ['./images/peaches.jpg', './images/stay.jpg', './images/peaches.jpg', './images/olivia.jpg']; // object storing paths for album covers and backgrounds
         var songArtists = ['Justin Beiber', 'Justin Beiber', 'Justin Beiber', 'Olivia Rodrigo']; // object storing track artists
         var songTitles = ["Peaches", "Stay", "Love Yourself", "Good 4 U"];
         // object storing track titles
