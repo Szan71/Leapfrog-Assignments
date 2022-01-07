@@ -15,7 +15,7 @@ function homeScreen() {
     homescreen.style.top = '74px';
     homescreen.style.left = '10px';
     homescreen.style.cursor = 'pointer';
-    homescreen.style.overflow = 'auto';
+    // homescreen.style.overflow = 'auto';
 
     // row 1
     var icons = document.createElement("div");
@@ -45,10 +45,11 @@ function homeScreen() {
 
         console.log('Camera');
         var cameraHome = document.createElement("video");
+        cameraHome.style.position = 'absolute';
+        cameraHome.style.top = '0px';
         homescreen.appendChild(cameraHome);
         cameraInterface();
-        cameraHome.style.position = 'absolute';
-        cameraHome.style.top = '1px';
+
     });
 
 

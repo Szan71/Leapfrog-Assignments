@@ -260,6 +260,8 @@ body {
 
 #cal-wrap {
     height: 400px;
+    width: 260px;
+    overflow: auto;
 }
 
 
