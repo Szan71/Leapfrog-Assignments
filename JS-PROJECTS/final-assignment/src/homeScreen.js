@@ -1,5 +1,17 @@
 var emulator = document.querySelector('.emulator');
 
+// var backBtn = document.createElement('button');
+// emulator.appendChild(backBtn);
+// backBtn.addEventListener('click', () => {
+//     homescreen.remove();
+//     homescreen();
+// });
+// backBtn.setAttribute('id', 'back-button');
+
+var backBtn = document.createElement('button');
+emulator.appendChild(backBtn);
+backBtn.setAttribute('id', 'back-button');
+
 function homeScreen() {
     lockScreen.style.display = 'none';
     passcode.style.display = 'none';
@@ -16,6 +28,12 @@ function homeScreen() {
     homescreen.style.left = '10px';
     homescreen.style.cursor = 'pointer';
     // homescreen.style.overflow = 'auto';
+
+    backBtn.addEventListener('click', () => {
+        let homeScreenDivs = Array.from(document.getElementsByClassName('homescreen'));
+        homeScreenDivs.forEach((el) => { el.remove() })
+        homeScreen();
+    });
 
     // row 1
     var icons = document.createElement("div");
@@ -57,6 +75,7 @@ function homeScreen() {
     icon2.addEventListener('click', () => {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
         var maps = document.createElement("div");
         homescreen.appendChild(maps);
         maps.innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.27689198518!2d85.29111310543334!3d27.709031933706044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1641204469061!5m2!1sen!2snp" width="260" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
@@ -67,6 +86,7 @@ function homeScreen() {
     icon4.addEventListener('click', () => {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
         homescreen.style.background = 'white';
 
         var calWrap = document.createElement("div");
@@ -134,6 +154,7 @@ function homeScreen() {
         homescreen.style.background = '#091921';
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
         console.log('Clock');
 
 
@@ -229,6 +250,7 @@ function homeScreen() {
     icon21.addEventListener('click', () => {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
         var youtube = document.createElement("div");
         homescreen.appendChild(youtube);
         youtube.innerHTML = `<iframe width="260" height="400" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
@@ -238,6 +260,7 @@ function homeScreen() {
     icon22.addEventListener('click', () => {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
 
         var player = document.createElement('div');
         player.className = 'player';
@@ -246,12 +269,6 @@ function homeScreen() {
         player.style.position = 'absolute';
         player.style.left = '0px';
         homescreen.appendChild(player);
-
-        // var backgroundImg = new Image();
-        // backgroundImg.src = './images/peaches.jpg';
-        // backgroundImg.setAttribute("id", "background");
-        // player.appendChild(backgroundImg);
-        // console.log('Image added');
 
         var audio = new Audio();
         audio.src = './sounds/Peaches.mp3';
@@ -403,11 +420,15 @@ function homeScreen() {
         function updateProgressValue() {
             progressBar.max = song.duration;
             progressBar.value = song.currentTime;
-            document.querySelector('.currentTime').innerHTML = (formatTime(Math.floor(song.currentTime)));
-            if (document.querySelector('.durationTime').innerHTML === "NaN:NaN") {
-                document.querySelector('.durationTime').innerHTML = "0:00";
-            } else {
-                document.querySelector('.durationTime').innerHTML = (formatTime(Math.floor(song.duration)));
+            try {
+                document.querySelector('.currentTime').innerHTML = (formatTime(Math.floor(song.currentTime)));
+                if (document.querySelector('.durationTime').innerHTML === "NaN:NaN") {
+                    document.querySelector('.durationTime').innerHTML = "0:00";
+                } else {
+                    document.querySelector('.durationTime').innerHTML = (formatTime(Math.floor(song.duration)));
+                }
+            } catch ($e) {
+
             }
         };
 
@@ -434,6 +455,7 @@ function homeScreen() {
     icon23.addEventListener('click', () => {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
         console.log('calculator');
 
         var calculatorApp = document.createElement("div");
@@ -467,40 +489,6 @@ function homeScreen() {
             ['.', '0', '%', '=']
         ];
 
-        // for (let i = 0; i < 5; i++) {
-        //     for (let j = 1; j <= 4; j++) {
-        //         var buttons = document.createElement("div");
-        //         buttons.className = 'buttons';
-        //         calculatorApp.appendChild(buttons);
-        //         var input = document.createElement('input');
-        //         buttons.appendChild(input);
-        //         input.setAttribute("type", "submit");
-        //         input.setAttribute("onClick", "set(this)");
-        //         input.setAttribute('value', values[(i * 4 + j) - 1]);
-        //         buttons.style.display = "inline";
-        //     }
-        //     buttons.insertAdjacentHTML("afterend", "<br/>")
-        //         // buttons.nextSibling = "<br/>"
-        // }
-
-        // values.forEach(i => {
-        //     var buttons = document.createElement("div");
-        //     buttons.className = 'buttons';
-        //     calculatorApp.appendChild(buttons);
-        //     var input = document.createElement('input');
-        //     buttons.appendChild(input);
-        //     input.setAttribute("type", "submit");
-        //     input.setAttribute("onClick", "set(this)");
-        //     input.setAttribute('value', i);
-        //     buttons.style.display = "inline";
-
-        // })
-
-        // var values = ['c', '^2', '^3', '/'];
-        // var values = ['9', '8', '7', 'X'];
-        // var values = ['6', '5', '4', '+'];
-        // var values3 = ['3', '2', '1', '-'];
-        // var values4 = ['.', '0', '%', '='];
 
         for (let i = 0; i < 5; i++) {
             var buttons = document.createElement("div");
@@ -525,6 +513,345 @@ function homeScreen() {
         }
 
     });
+
+    icon24.addEventListener('click', () => {
+        icons.style.display = 'none';
+        icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
+
+        var weatherApp = document.createElement('div');
+        weatherApp.className = 'weatherApp';
+        weatherApp.style.width = '260px';
+        weatherApp.style.height = '400px';
+        weatherApp.style.position = 'absolute';
+        weatherApp.style.left = '0px';
+        weatherApp.style.background = 'black';
+        homescreen.appendChild(weatherApp);
+
+        var weatherForm = document.createElement('form');
+        weatherForm.setAttribute('id', 'form');
+        weatherApp.appendChild(weatherForm);
+
+        var weatherInput = document.createElement('input');
+        weatherForm.appendChild(weatherInput);
+        weatherInput.setAttribute('type', 'text');
+        weatherInput.setAttribute('id', 'search');
+        weatherInput.setAttribute('placeholder', 'Search by location');
+        weatherInput.setAttribute('autocomplete', 'off');
+
+
+        var weatherMain = document.createElement('main');
+        weatherApp.appendChild(weatherMain);
+        weatherMain.setAttribute('id', 'main');
+
+        const apiKey = "5716b71f47305d867f16fe7d50244c20";
+        const main = document.getElementById('main');
+        const form = document.getElementById('form');
+        const search = document.getElementById('search');
+        const url = (city) => `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+        // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`).then(
+        //     res => console.log(res)
+        // );
+
+        async function getWeatherByLocation(city) {
+            const resp = await fetch(url(city), {
+                origin: "cros"
+            });
+            const respData = await resp.json();
+            addWeatherToPage(respData);
+        }
+
+        function addWeatherToPage(data) {
+            const temp = Ktoc(data.main.temp);
+            const weather = document.createElement('div')
+            weather.classList.add('weather');
+            weather.innerHTML = `  
+      <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°C <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>  
+      <small>${data.weather[0].main}</small>  
+      `;
+            //  cleanup   
+            main.innerHTML = "";
+            main.appendChild(weather);
+        };
+
+        function Ktoc(K) {
+            return Math.floor(K - 273.15);
+        }
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const city = search.value;
+            if (city) {
+                getWeatherByLocation(city)
+            }
+        });
+    });
+
+    var icons_row3 = document.createElement("div");
+    icons_row3.style.display = 'flex';
+    icons_row3.style.height = '70px';
+    icons_row3.style.padding = '10px 0px';
+    homescreen.appendChild(icons_row3);
+    var icon31 = document.createElement('img');
+    var icon32 = document.createElement('img');
+    var icon33 = document.createElement('img');
+    var icon34 = document.createElement('img');
+    icon31.src = "./images/notes.svg";
+    icon32.src = "./images/clips.svg";
+    icon33.src = "./images/photos.svg";
+    icon34.src = "./images/weather.svg";
+    icons_row3.appendChild(icon31);
+    icons_row3.appendChild(icon32);
+    icons_row3.appendChild(icon33);
+    icons_row3.appendChild(icon34);
+    icon31.style.margin = '0px 7px';
+    icon32.style.margin = '0px 7px';
+    icon33.style.margin = '0px 7px';
+    icon34.style.margin = '0px 7px';
+
+    icon31.addEventListener('click', () => {
+        icons.style.display = 'none';
+        icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
+
+        var memoApp = document.createElement('div');
+        memoApp.className = 'memo-app';
+        memoApp.style.width = '260px';
+        memoApp.style.height = '400px';
+        memoApp.style.position = 'absolute';
+        memoApp.style.left = '0px';
+        homescreen.appendChild(memoApp);
+
+        var memoSection = document.createElement('section');
+        memoSection.className = 'note';
+        memoApp.appendChild(memoSection);
+
+        var memoInput = document.createElement('input');
+        memoSection.appendChild(memoInput);
+        memoInput.setAttribute('type', 'text');
+        memoInput.setAttribute('placeholder', 'Title');
+        memoInput.setAttribute('id', 'title');
+        memoInput.setAttribute('value', '');
+        memoInput.addEventListener('change', saveTitle);
+
+        var memoTextarea = document.createElement('textarea');
+        memoSection.appendChild(memoTextarea);
+        memoTextarea.setAttribute('placeholder', 'Type a note here...');
+        memoTextarea.setAttribute('id', 'message');
+        memoTextarea.addEventListener('change', saveMessage);
+        memoTextarea.innerHtml = 'Type a note here...';
+
+        var test = document.createElement('div');
+        test.setAttribute('id', 'test');
+
+        function saveTitle() {
+            //Make sure local storage is supported by the browser.
+            if (typeof(Storage) !== 'undefined') {
+                //Get title value
+                var input = document.getElementById('title').value;
+
+                //Save title to local Storage
+                localStorage.setItem('title', input);
+                document.getElementById('title').value = localStorage.getItem('title');
+
+                //Test
+                console.log('Title saved.')
+                    //document.getElementById('test').innerHTML = localStorage.getItem('title')
+
+            } else { //Throw an error if browser doesn't support local storage
+                document.getElementById('test').innerHTML('Sorry, your browser does not support Web Storage...')
+            }
+
+        }
+        //Get the value of the title from local storage.
+        document.getElementById('title').value = localStorage.getItem('title')
+
+
+
+        //Save note message
+        function saveMessage() {
+            if (typeof(Storage) != 'undefined') {
+                //Get value of the message
+                var messageInput = document.getElementById('message').value;
+
+                //Save the value in local storage.
+                localStorage.setItem('message', messageInput);
+                document.getElementById('message').value = localStorage.getItem('message')
+
+                //Test
+                console.log('Message saved.')
+                    //document.getElementById('test').innerHTML = localStorage.getItem('message')
+
+            } else { //Throw an error if browser doesn't support local storage
+                document.getElementById('test').innerHTML('Sorry, your browser does not support Web Storage...')
+            }
+
+        }
+
+        //Get the value of the message from local storage
+        document.getElementById('message').value = localStorage.getItem('message')
+
+
+
+    });
+
+    icon32.addEventListener('click', () => {
+        icons.style.display = 'none';
+        icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
+
+        var videoApp = document.createElement('div');
+        videoApp.className = 'video-player';
+        videoApp.style.width = '260px';
+        videoApp.style.height = '400px';
+        videoApp.style.position = 'absolute';
+        videoApp.style.left = '0px';
+        videoApp.style.background = 'black';
+        homescreen.appendChild(videoApp);
+
+        var videoPlayer = document.createElement('video');
+        videoApp.appendChild(videoPlayer);
+        videoPlayer.setAttribute('id', 'my-Player');
+        videoPlayer.className = 'Player-js';
+        videoPlayer.setAttribute('controls', '');
+        videoPlayer.setAttribute('preload', 'auto');
+        videoPlayer.setAttribute('poster', 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg');
+        videoPlayer.setAttribute('data-setup', '');
+        videoPlayer.setAttribute('loop', '');
+        videoPlayer.style.width = '260px';
+        videoPlayer.style.height = '400px';
+
+
+        var videoSource = document.createElement('source');
+        videoPlayer.appendChild(videoSource);
+        videoSource.setAttribute('src', 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4')
+        videoSource.setAttribute('type', 'video/mp4');
+    });
+
+    icon33.addEventListener('click', () => {
+        icons.style.display = 'none';
+        icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
+
+        var photoApp = document.createElement('div');
+        photoApp.style.width = '260px';
+        photoApp.style.height = '400px';
+        photoApp.style.position = 'absolute';
+        photoApp.style.left = '0px';
+        photoApp.style.background = 'black';
+        homescreen.appendChild(photoApp);
+
+        var carouselContainer = document.createElement('div');
+        carouselContainer.className = 'carousel-container';
+        photoApp.appendChild(carouselContainer);
+
+        var navigation = document.createElement('div');
+        navigation.className = 'navigation';
+        carouselContainer.appendChild(navigation);
+
+        var prev = document.createElement('div');
+        prev.classList.add('prev', 'nav-btn');
+        navigation.appendChild(prev);
+
+        var next = document.createElement('div');
+        next.classList.add('next', 'nav-btn');
+        navigation.appendChild(next);
+
+        var carousel = document.createElement('div');
+        carousel.className = 'carousel';
+        carouselContainer.appendChild(carousel);
+
+        // item1
+        var item1 = document.createElement('div');
+        item1.classList.add('item', 'main-item');
+        carousel.appendChild(item1);
+
+        var img = document.createElement('img');
+        img.src = './images/image1.jpg';
+        item1.appendChild(img);
+
+        var caption = document.createElement('div');
+        caption.className = 'caption';
+        caption.innerHTML = 'Image 1';
+        item1.appendChild(caption);
+
+        // item2
+        var item2 = document.createElement('div');
+        item2.className = 'item';
+        carousel.appendChild(item2);
+
+        var img2 = document.createElement('img');
+        img2.src = './images/image2.jpg';
+        item2.appendChild(img2);
+
+        var caption2 = document.createElement('div');
+        caption2.className = 'caption';
+        caption2.innerHTML = 'Image 2';
+        item2.appendChild(caption2);
+
+        // item3
+        var item3 = document.createElement('div');
+        item3.className = 'item';
+        carousel.appendChild(item3);
+
+        var img3 = document.createElement('img');
+        img3.src = './images/image3.jpg';
+        item3.appendChild(img3);
+
+        var caption3 = document.createElement('div');
+        caption3.className = 'caption';
+        caption3.innerHTML = 'Image 3';
+        item3.appendChild(caption3);
+
+        const images = document.querySelector('.carousel').children;
+        console.log(images);
+        const totalImages = images.length;
+        let index = 0;
+
+        prev.addEventListener('click', () => {
+            nextImage('next');
+        })
+
+        next.addEventListener('click', () => {
+            nextImage('prev');
+        })
+
+        function nextImage(direction) {
+            if (direction == 'next') {
+                index++;
+                if (index == totalImages) {
+                    index = 0;
+                }
+            } else {
+                if (index == 0) {
+                    index = totalImages - 1;
+                } else {
+                    index--;
+                }
+            }
+
+            for (let i = 0; i < images.length; i++) {
+                images[i].classList.remove('main-item');
+            }
+            images[index].classList.add('main-item');
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    });
+
+
 
 
 }
