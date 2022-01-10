@@ -1,12 +1,5 @@
 var emulator = document.querySelector('.emulator');
-
-// var backBtn = document.createElement('button');
-// emulator.appendChild(backBtn);
-// backBtn.addEventListener('click', () => {
-//     homescreen.remove();
-//     homescreen();
-// });
-// backBtn.setAttribute('id', 'back-button');
+// emulator.style.transform = 'rotate(90deg)';
 
 var backBtn = document.createElement('button');
 emulator.appendChild(backBtn);
@@ -15,7 +8,6 @@ backBtn.setAttribute('id', 'back-button');
 function homeScreen() {
     lockScreen.style.display = 'none';
     passcode.style.display = 'none';
-    console.log('This is homescreen!');
     var homescreen = document.createElement("div");
     emulator.appendChild(homescreen);
     homescreen.classList.add("homescreen");
@@ -27,7 +19,6 @@ function homeScreen() {
     homescreen.style.top = '74px';
     homescreen.style.left = '10px';
     homescreen.style.cursor = 'pointer';
-    // homescreen.style.overflow = 'auto';
 
     backBtn.addEventListener('click', () => {
         let homeScreenDivs = Array.from(document.getElementsByClassName('homescreen'));
@@ -598,7 +589,7 @@ function homeScreen() {
     icon31.src = "./images/notes.svg";
     icon32.src = "./images/clips.svg";
     icon33.src = "./images/photos.svg";
-    icon34.src = "./images/weather.svg";
+    icon34.src = "./images/photos.svg";
     icons_row3.appendChild(icon31);
     icons_row3.appendChild(icon32);
     icons_row3.appendChild(icon33);
@@ -834,22 +825,156 @@ function homeScreen() {
             }
             images[index].classList.add('main-item');
         }
+    });
 
+    icon34.addEventListener('click', () => {
+        icons.style.display = 'none';
+        icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
 
+        var pencilApp = document.createElement('div');
+        pencilApp.className = 'pencil-app';
+        pencilApp.style.width = '260px';
+        pencilApp.style.height = '400px';
+        pencilApp.style.position = 'absolute';
+        pencilApp.style.left = '0px';
+        pencilApp.style.background = 'white';
+        homescreen.appendChild(pencilApp);
 
+        var canvas = document.createElement('canvas');
+        canvas.setAttribute('id', 'canvas');
+        canvas.style.height = '400px';
+        canvas.style.width = '260px';
+        pencilApp.appendChild(canvas);
 
+        var toolBox = document.createElement('div');
+        toolBox.className = 'toolbox';
+        pencilApp.appendChild(toolBox);
 
+        var decreaseBtn = document.createElement('button');
+        decreaseBtn.setAttribute('id', 'decrease');
+        toolBox.appendChild(decreaseBtn);
+        decreaseBtn.innerHTML = '-';
 
+        var sizeSpan = document.createElement('span');
+        sizeSpan.setAttribute('id', 'size');
+        toolBox.appendChild(sizeSpan);
+        sizeSpan.innerHTML = '10';
 
+        var increaseBtn = document.createElement('button');
+        increaseBtn.setAttribute('id', 'increase');
+        toolBox.appendChild(increaseBtn);
+        increaseBtn.innerHTML = '+';
 
+        var colorInput = document.createElement('input');
+        colorInput.setAttribute('type', 'color');
+        colorInput.setAttribute('id', 'color');
+        toolBox.appendChild(colorInput);
 
+        var clearBtn = document.createElement('button');
+        clearBtn.setAttribute('id', 'clear');
+        toolBox.appendChild(clearBtn);
+        clearBtn.innerHTML = 'X';
 
+        const sizeEL = document.getElementById('size');
+        const colorEl = document.getElementById('color');
+        const clearEl = document.getElementById('clear');
 
+        const ctx = canvas.getContext('2d');
 
+        let size = 10
+        let isPressed = false
+        let color = 'black'
+        let x
+        let y
 
+        canvas.addEventListener('mousedown', (e) => {
+            isPressed = true
 
+            x = e.offsetX
+            y = e.offsetY
+        })
+
+        canvas.addEventListener('mouseup', (e) => {
+            isPressed = false
+
+            x = undefined
+            y = undefined
+        })
+
+        canvas.addEventListener('mousemove', (e) => {
+            if (isPressed) {
+                const x2 = e.offsetX
+                const y2 = e.offsetY
+
+                drawCircle(x2, y2)
+                drawLine(x, y, x2, y2)
+
+                x = x2
+                y = y2
+            }
+        })
+
+        function drawCircle(x, y) {
+            ctx.beginPath();
+            ctx.arc(x, y, size, 0, Math.PI * 2)
+            ctx.fillStyle = color
+            ctx.fill()
+        }
+
+        function drawLine(x1, y1, x2, y2) {
+            ctx.beginPath()
+            ctx.moveTo(x1, y1)
+            ctx.lineTo(x2, y2)
+            ctx.strokeStyle = color
+            ctx.lineWidth = size * 2
+            ctx.stroke()
+        }
+
+        function updateSizeOnScreen() {
+            sizeEL.innerText = size
+        }
+
+        increaseBtn.addEventListener('click', () => {
+            size += 5
+
+            if (size > 50) {
+                size = 50
+            }
+
+            updateSizeOnScreen()
+        })
+
+        decreaseBtn.addEventListener('click', () => {
+            size -= 5
+
+            if (size < 5) {
+                size = 5
+            }
+
+            updateSizeOnScreen()
+        })
+
+        colorEl.addEventListener('change', (e) => color = e.target.value)
+
+        clearEl.addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height))
 
     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
