@@ -15,7 +15,6 @@ function passCheck($event) {
             var audio = new Audio('./sounds/unlock.mp3');
             audio.play();
             homeScreen();
-            console.log('Hello! Sujan');
         }
     }
 }

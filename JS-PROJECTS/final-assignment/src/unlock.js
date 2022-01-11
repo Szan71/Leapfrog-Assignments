@@ -5,7 +5,6 @@ const passcode = document.querySelector(".passcode");
 const cameraBtn = document.querySelectorAll('.lockscreen-bottom-right');
 
 lockScreen.addEventListener("click", () => {
-    console.log('Hello');
     dateTime.style.display = 'none';
     lockscreenBottom.style.display = 'none';
     lockScreen.style.filter = 'blur(4px)';
@@ -15,7 +14,6 @@ lockScreen.addEventListener("click", () => {
 
 cameraBtn[0].addEventListener("click", (event) => {
     event.stopPropagation();
-    console.log('Flashlight!');
     var flashlight = document.createElement("div");
     lockScreen.appendChild(flashlight);
     flashlight.style.background = "white";
@@ -28,7 +26,6 @@ cameraBtn[0].addEventListener("click", (event) => {
 
 cameraBtn[1].addEventListener("click", (event) => {
     event.stopPropagation();
-    console.log('Camera!');
 
     var camera = document.createElement("video");
     lockScreen.appendChild(camera);

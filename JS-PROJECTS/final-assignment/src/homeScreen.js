@@ -605,7 +605,7 @@ function homeScreen() {
     icon31.src = "./images/notes.svg";
     icon32.src = "./images/clips.svg";
     icon33.src = "./images/photos.svg";
-    icon34.src = "./images/photos.svg";
+    icon34.src = "./images/pen.svg";
     icons_row3.appendChild(icon31);
     icons_row3.appendChild(icon32);
     icons_row3.appendChild(icon33);
@@ -614,6 +614,7 @@ function homeScreen() {
     icon32.style.margin = '0px 7px';
     icon33.style.margin = '0px 7px';
     icon34.style.margin = '0px 7px';
+
 
     icon31.addEventListener('click', () => {
         icons.style.display = 'none';
@@ -990,20 +991,12 @@ function homeScreen() {
     homescreen.appendChild(icons_row4);
     var icon41 = document.createElement('img');
     var icon42 = document.createElement('img');
-    var icon43 = document.createElement('img');
-    var icon44 = document.createElement('img');
     icon41.src = "./images/flappy.png";
     icon42.src = "./images/target.svg";
-    icon43.src = "./images/photos.svg";
-    icon44.src = "./images/photos.svg";
     icons_row4.appendChild(icon41);
     icons_row4.appendChild(icon42);
-    icons_row4.appendChild(icon43);
-    icons_row4.appendChild(icon44);
     icon41.style.margin = '0px 7px';
     icon42.style.margin = '0px 7px';
-    icon43.style.margin = '0px 7px';
-    icon44.style.margin = '0px 7px';
 
     icon41.addEventListener('click', () => {
         icons.style.display = 'none';
@@ -1049,14 +1042,11 @@ function homeScreen() {
         btnImg.className = 'start-button';
         beforeStart.appendChild(btnImg);
 
+
         var instructionP1 = document.createElement('p');
         beforeStart.appendChild(instructionP1);
-        instructionP1.innerHTML = 'Press any key or the Play button';
-
-        var instructionP2 = document.createElement('p');
-        beforeStart.appendChild(instructionP2);
-        instructionP2.setAttribute('id', 'instruction');
-        instructionP2.innerHTML = 'Press any key or the Play button';
+        instructionP1.setAttribute('id', 'instruction');
+        instructionP1.innerHTML = 'PLAY';
 
         var afterCrash = document.createElement('div');
         afterCrash.className = 'after-crash';
@@ -1345,7 +1335,7 @@ function homeScreen() {
         }
 
         //Controller that is used to start the game and control the flappy
-        document.onclick = function(e) {
+        flappyBird.onclick = function(e) {
 
             flappyCanvas.style.display = 'block';
             beforeStart.style.display = 'none';
@@ -1424,6 +1414,9 @@ function homeScreen() {
         targetGame.style.position = 'absolute';
         targetGame.style.left = '0px';
         targetGame.style.background = 'white';
+        targetGame.style.textAlign = 'center';
+        targetGame.style.color = 'black';
+        targetGame.innerHTML = '<p>Click anywhere above the red line<p>';
         homescreen.appendChild(targetGame);
 
         var drop = document.createElement('div');
@@ -1437,6 +1430,22 @@ function homeScreen() {
         var target = document.createElement('div');
         target.setAttribute('id', 'target');
         targetGame.appendChild(target);
+
+
+        // let pos2 = 0;
+        // let direction = 1;
+        // const id1 = setInterval(() => {
+
+        //     if (pos2 == 240) {
+        //         direction = -1;
+        //     } else if (pos2 == 0) {
+        //         direction = 1;
+        //     }
+        //     pos2 += direction;
+        //     target.style.left = pos2 + "px";
+        // }, 50);
+
+
         let start = false;
         line.addEventListener("click", function(e) {
             if (!start) {
@@ -1446,16 +1455,18 @@ function homeScreen() {
                 drop.style.height = "20px";
                 drop.style.background = "blue";
                 drop.style.position = "absolute";
-                drop.style.left = e.pageX - 362 + "px";
-                // console.log("Mouse: ", e.pageX);
+
+                drop.style.left = e.offsetX + "px";
 
                 const tar_left = Math.round(window.scrollX + target.getBoundingClientRect().left);
                 const drop_left = Math.round(window.scrollX + drop.getBoundingClientRect().left);
-                // console.log("Drop: ", drop_left);
+                console.log("Drop: ", drop_left);
                 let id = null;
                 let pos = 0;
+
                 clearInterval(id);
                 id = setInterval(frame, 5);
+
 
                 function frame() {
                     if (pos == 380) {
@@ -1467,13 +1478,22 @@ function homeScreen() {
                 }
 
                 if (drop_left === tar_left) {
+                    // clearInterval(id1);
+                    var won = document.createElement('div');
+                    targetGame.appendChild(won);
+                    won.style.height = '100px';
                     setTimeout(function() {
-                        alert("Target Matched!");
+                        // alert("Target Matched!");
+                        won.innerHTML = '<h3>Target Matched</h3>';
                         start = false;
-                    }, 2300);
+                    }, 2000);
                 } else {
-                    start = false;
+                    setTimeout(function() {
+                        start = false;
+                        target.style.right = Math.floor(Math.random() * (240 + 1)) + "px";
+                    }, 2300);
                 }
+
 
             }
 
