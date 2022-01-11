@@ -774,9 +774,10 @@ textarea {
     justify-content: center;
 }
 
-canvas {
+
+/* canvas {
     border: 2px solid steelblue;
-}
+} */
 
 .toolbox {
     background-color: steelblue;
@@ -801,4 +802,102 @@ canvas {
 
 .toolbox>*:last-child {
     margin-left: auto;
+}
+
+
+/* flappy bird */
+
+#instruction {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    top: 280px;
+}
+
+#instructions {
+    color: #000;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+}
+
+.before-start {
+    position: relative;
+    height: 400px;
+    width: 260px;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
+.after-crash {
+    position: absolute;
+    height: 250px;
+    width: 260px;
+    margin: auto;
+    bottom: 45px;
+    left: 1px;
+}
+
+.before-start img {
+    height: 400px;
+    width: 260px;
+}
+
+.before-start .start-button {
+    position: absolute;
+    top: 150px;
+    right: 95px;
+    height: 40px;
+    width: 90px;
+}
+
+.before-start p {
+    position: absolute;
+    top: 230px;
+    right: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 22px;
+}
+
+#instructions {
+    display: none;
+}
+
+.after-crash {
+    display: none;
+}
+
+.display-score {
+    background-color: #000;
+    color: #fff;
+    padding: 5px 15px;
+    line-height: 25px;
+}
+
+.restart-instruction {
+    background-color: red;
+    color: #fff;
+    padding: 5px;
+    margin-top: 15px;
+}
+
+
+/* Target game */
+
+#line {
+    position: absolute;
+    top: 0px;
+    color: black;
+    width: 260px;
+    height: 100px;
+    border-bottom: solid 1px red;
+}
+
+#target {
+    width: 20px;
+    height: 20px;
+    background: red;
+    position: absolute;
+    top: 380px;
+    right: 120px;
 }

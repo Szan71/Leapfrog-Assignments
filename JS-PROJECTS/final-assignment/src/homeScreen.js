@@ -1,5 +1,15 @@
 var emulator = document.querySelector('.emulator');
-// emulator.style.transform = 'rotate(90deg)';
+let rotateDegree = 0;
+document.getElementById('rotatebtn').addEventListener('click', rotate);
+
+function rotate() {
+    if (rotateDegree > 360) {
+        rotateDegree = 90;
+    }
+    rotateDegree = rotateDegree + 90
+    emulator.style.transform = `rotate(${rotateDegree}deg)`;
+}
+
 
 var backBtn = document.createElement('button');
 emulator.appendChild(backBtn);
@@ -67,6 +77,7 @@ function homeScreen() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
         var maps = document.createElement("div");
         homescreen.appendChild(maps);
         maps.innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.27689198518!2d85.29111310543334!3d27.709031933706044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1641204469061!5m2!1sen!2snp" width="260" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
@@ -78,6 +89,7 @@ function homeScreen() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
         homescreen.style.background = 'white';
 
         var calWrap = document.createElement("div");
@@ -146,6 +158,7 @@ function homeScreen() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
         console.log('Clock');
 
 
@@ -242,6 +255,7 @@ function homeScreen() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
         var youtube = document.createElement("div");
         homescreen.appendChild(youtube);
         youtube.innerHTML = `<iframe width="260" height="400" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
@@ -252,6 +266,7 @@ function homeScreen() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
 
         var player = document.createElement('div');
         player.className = 'player';
@@ -447,7 +462,7 @@ function homeScreen() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
-        console.log('calculator');
+        icons_row4.style.display = 'none';
 
         var calculatorApp = document.createElement("div");
         homescreen.appendChild(calculatorApp);
@@ -509,6 +524,7 @@ function homeScreen() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
 
         var weatherApp = document.createElement('div');
         weatherApp.className = 'weatherApp';
@@ -603,6 +619,7 @@ function homeScreen() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
 
         var memoApp = document.createElement('div');
         memoApp.className = 'memo-app';
@@ -689,6 +706,7 @@ function homeScreen() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
 
         var videoApp = document.createElement('div');
         videoApp.className = 'video-player';
@@ -722,6 +740,7 @@ function homeScreen() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
 
         var photoApp = document.createElement('div');
         photoApp.style.width = '260px';
@@ -831,6 +850,7 @@ function homeScreen() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
 
         var pencilApp = document.createElement('div');
         pencilApp.className = 'pencil-app';
@@ -841,11 +861,12 @@ function homeScreen() {
         pencilApp.style.background = 'white';
         homescreen.appendChild(pencilApp);
 
-        var canvas = document.createElement('canvas');
-        canvas.setAttribute('id', 'canvas');
-        canvas.style.height = '400px';
-        canvas.style.width = '260px';
-        pencilApp.appendChild(canvas);
+        var penCanvas = document.createElement('canvas');
+        penCanvas.setAttribute('id', 'canvas');
+        penCanvas.style.height = '400px';
+        penCanvas.style.width = '260px';
+        penCanvas.style.border = '2px solid steelblue';
+        pencilApp.appendChild(penCanvas);
 
         var toolBox = document.createElement('div');
         toolBox.className = 'toolbox';
@@ -888,21 +909,21 @@ function homeScreen() {
         let x
         let y
 
-        canvas.addEventListener('mousedown', (e) => {
+        penCanvas.addEventListener('mousedown', (e) => {
             isPressed = true
 
             x = e.offsetX
             y = e.offsetY
         })
 
-        canvas.addEventListener('mouseup', (e) => {
+        penCanvas.addEventListener('mouseup', (e) => {
             isPressed = false
 
             x = undefined
             y = undefined
         })
 
-        canvas.addEventListener('mousemove', (e) => {
+        penCanvas.addEventListener('mousemove', (e) => {
             if (isPressed) {
                 const x2 = e.offsetX
                 const y2 = e.offsetY
@@ -962,6 +983,506 @@ function homeScreen() {
     });
 
 
+    var icons_row4 = document.createElement("div");
+    icons_row4.style.display = 'flex';
+    icons_row4.style.height = '70px';
+    icons_row4.style.padding = '10px 0px';
+    homescreen.appendChild(icons_row4);
+    var icon41 = document.createElement('img');
+    var icon42 = document.createElement('img');
+    var icon43 = document.createElement('img');
+    var icon44 = document.createElement('img');
+    icon41.src = "./images/flappy.png";
+    icon42.src = "./images/target.svg";
+    icon43.src = "./images/photos.svg";
+    icon44.src = "./images/photos.svg";
+    icons_row4.appendChild(icon41);
+    icons_row4.appendChild(icon42);
+    icons_row4.appendChild(icon43);
+    icons_row4.appendChild(icon44);
+    icon41.style.margin = '0px 7px';
+    icon42.style.margin = '0px 7px';
+    icon43.style.margin = '0px 7px';
+    icon44.style.margin = '0px 7px';
+
+    icon41.addEventListener('click', () => {
+        icons.style.display = 'none';
+        icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
+
+
+        var flappyBird = document.createElement('div');
+        flappyBird.className = 'flappy-bird';
+        flappyBird.style.width = '260px';
+        flappyBird.style.height = '400px';
+        flappyBird.style.position = 'absolute';
+        flappyBird.style.left = '0px';
+        flappyBird.style.background = 'white';
+        homescreen.appendChild(flappyBird);
+
+        var sprites = document.createElement('img');
+        sprites.src = "./images/sprites.png";
+        flappyBird.appendChild(sprites);
+        sprites.style.display = 'none';
+
+        var flappyCanvas = document.createElement('canvas');
+        flappyCanvas.setAttribute('id', 'canvas');
+        flappyBird.appendChild(flappyCanvas);
+        flappyCanvas.style.margin = 'auto';
+        flappyCanvas.style.border = '1px solid black';
+        flappyCanvas.style.display = 'none';
+
+
+        var beforeStart = document.createElement('div');
+        beforeStart.className = 'before-start';
+        flappyBird.appendChild(beforeStart);
+
+        var bgImg = document.createElement('img');
+        bgImg.src = "./images/bg.png";
+        bgImg.setAttribute('alt', 'imageBackground');
+        beforeStart.appendChild(bgImg);
+
+        var btnImg = document.createElement('img');
+        btnImg.src = "./images/play-button.svg";
+        btnImg.setAttribute('alt', 'Start Button');
+        btnImg.className = 'start-button';
+        beforeStart.appendChild(btnImg);
+
+        var instructionP1 = document.createElement('p');
+        beforeStart.appendChild(instructionP1);
+        instructionP1.innerHTML = 'Press any key or the Play button';
+
+        var instructionP2 = document.createElement('p');
+        beforeStart.appendChild(instructionP2);
+        instructionP2.setAttribute('id', 'instruction');
+        instructionP2.innerHTML = 'Press any key or the Play button';
+
+        var afterCrash = document.createElement('div');
+        afterCrash.className = 'after-crash';
+        flappyBird.appendChild(afterCrash);
+
+        var displayScore = document.createElement('div');
+        displayScore.className = 'display-score';
+        afterCrash.appendChild(displayScore);
+        displayScore.innerHTML = `<h4>Score: </h4>
+        <p id="score"></p>
+        <h4>High Score: </h4>
+        <p id="high-score"></p>`;
+
+        var restart = document.createElement('p');
+        restart.className = 'restart-instruction';
+        restart.innerHTML = 'Touch anywhere to Re-Start the Game';
+        afterCrash.appendChild(restart);
+
+        //list of all the constants
+
+        const CANVAS_WIDTH = 260; //Width of our canvas
+        const CANVAS_HEIGHT = 400; //Height of our canvas
+        const FLAPPING = 5; //to move at 7 frame/sec
+        const W = 288,
+            H = 400; //Playground Width and Height
+        const BIRD_WIDTH = 34; //Bird Width
+        const BIRD_HEIGHT = 26; //Bird Height
+        const PIPE_WIDTH = 52; //Our Pipe Width 
+        const GRAVITY = -0.2; //the speed at the which bird flew down
+        const SPEED = 2.0; //speed at which it move
+        const PIPE_SPACING = 100; //space adjacent pipes
+        const TWO_PIPE_HEIGHT_DIFF = 100; //difference in shape between top and down pipe
+
+        // playground
+        /**
+         * The PlayGround Class Where player will begin playing flappy bird
+         */
+
+        class PlayGround {
+
+            constructor() {
+                this.padding = 2
+                this.birdSpeed = 6;
+            }
+
+            // drawing stripe with the background image
+            displayBackground = () => {
+                displaySprite(bgSprite, 0, 0);
+            }
+
+            //rendering the bottom graphics on our canvas
+            displayFloor = () => {
+                // animate floor
+                floorSprite.x = 292 + (time * SPEED % 14);
+                displaySprite(floorSprite, 0, 400);
+            }
+
+
+            //rending pipes into our playing area
+            displayPipes = () => {
+                for (var i = 0; i < pipes.length; ++i) {
+                    if (pipes[i].y === 0) {
+                        displaySprite(topPipeSprite, pipes[i].x, pipes[i].h - topPipeSprite.h);
+                    } else {
+                        displaySprite(bottomPipeSprite, pipes[i].x, pipes[i].y);
+                    }
+                }
+            }
+
+
+            //displaying scores on top of out playground
+            displayScore = () => {
+                let numbers = score.toString(10).split("").map(Number);
+                let scale = numSprite[0].scale;
+                let width = numSprite[0].w;
+                let offset = W / 2; // center of canvas
+                offset -= numbers.length * width / 2 * scale; // left to center numbers
+                offset -= this.padding * (numbers.length - 1); // left to adjust for padding
+                for (var i = 0; i < numbers.length; ++i) {
+                    displaySprite(numSprite[numbers[i]], offset + i * width * scale + i * this.padding * 2, 50);
+                }
+            }
+
+            //displaying flappy bird
+            displayBird = () => {
+                // iterating through sprites (flap animation)
+                let birdState = Math.floor((time % (4 * this.birdSpeed)) / this.birdSpeed);
+                ctx.save();
+                ctx.translate(bird.x + birdSprite[0].w / 2, bird.y + birdSprite[0].h / 2);
+                ctx.rotate(-bird.dy * 5 * (Math.PI / 180));
+                displaySprite(birdSprite[birdState], -birdSprite[0].w / 2, -birdSprite[0].h / 2);
+                ctx.restore();
+            }
+
+            //displaying game over
+            displayGameOver = () => {
+                let sprite = { x: 292, y: 397, w: 188, h: 39 };
+                displaySprite(sprite, 50, 200);
+            }
+
+            // sprites
+
+
+
+        }
+
+        // sprite
+        //Sprite for our playground background
+        bgSprite = {
+            x: 0,
+            y: 0,
+            w: 288,
+            h: 512,
+            scale: 1
+        }
+
+
+        //Sprite for our Floor
+        floorSprite = {
+            x: 292,
+            y: 0,
+            w: 288,
+            h: 112,
+            scale: 1
+        }
+
+
+        //Bird Sprite
+        birdSprite = [
+            { x: 528, y: 128, w: 34, h: 25, scale: 1 },
+            { x: 528, y: 180, w: 34, h: 25, scale: 1 },
+            { x: 446, y: 248, w: 34, h: 25, scale: 1 },
+            { x: 528, y: 180, w: 34, h: 25, scale: 1 }
+        ]
+
+        //Bottom Pipe Sprite
+        bottomPipeSprite = {
+            x: 660,
+            y: 0,
+            w: 52,
+            h: 270,
+            scale: 1
+        }
+
+        //Top Pipe Sprite
+        topPipeSprite = {
+            x: 604,
+            y: 0,
+            w: 52,
+            h: 270,
+            scale: 1
+        }
+
+        //Score updating Num Sprite
+        numSprite = [{ x: 576, y: 200, w: 14, h: 20, scale: 1.5 },
+            { x: 580, y: 236, w: 14, h: 20, scale: 1.5 },
+            { x: 578, y: 268, w: 14, h: 20, scale: 1.5 },
+            { x: 578, y: 300, w: 14, h: 20, scale: 1.5 },
+            { x: 574, y: 346, w: 14, h: 20, scale: 1.5 },
+            { x: 574, y: 370, w: 14, h: 20, scale: 1.5 },
+            { x: 330, y: 490, w: 14, h: 20, scale: 1.5 },
+            { x: 350, y: 490, w: 14, h: 20, scale: 1.5 },
+            { x: 370, y: 490, w: 14, h: 20, scale: 1.5 },
+            { x: 390, y: 490, w: 14, h: 20, scale: 1.5 }
+        ]
+
+        // utils
+        //drawing sprite images on our playground
+        function displaySprite(sprite, x, y) {
+            ctx.drawImage(sprites, sprite.x, sprite.y, sprite.w, sprite.h,
+                x, y, sprite.scale * sprite.w, sprite.scale * sprite.h);
+        }
+
+
+        //function detecting whether the bird strike on any of the two pipe of ground
+        function detectStrike(box1, box2) {
+            return box1.x < box2.x + box2.w &&
+                box1.x + box1.w > box2.x &&
+                box1.y < box2.y + box2.h &&
+                box1.y + box1.h > box2.y;
+        }
+
+        // controller
+        let bird;
+        let pipes = [];
+        let flapping;
+        let time;
+        let score;
+
+
+        //Not Displaying the Gates that were out of our player ground
+        function hideUndisplayPipes() {
+            s = displayPipes.length;
+            pipes = displayPipes.filter(function(item) {
+                return item.x + item.w >= 0;
+            });
+        }
+
+
+        //function where we initiating the bird position and definning its assets
+        function init() {
+            bird = {
+                x: W / 2 - BIRD_WIDTH / 2,
+                y: H / 2 - BIRD_HEIGHT / 2,
+                w: BIRD_WIDTH,
+                h: BIRD_HEIGHT,
+                dy: 0
+            };
+            flapping = true;
+            time = 0;
+            score = 0;
+            displayPipes = [];
+        }
+
+
+        //Capturing the each step of player playing the flappy bird
+        function step() {
+            if (flapping && document.querySelector('#canvas').style.display == 'block') {
+
+                for (var i = 0; i < displayPipes.length; ++i) {
+                    displayPipes[i].x -= SPEED;
+                }
+                hideUndisplayPipes();
+                if (time % PIPE_SPACING == 0) {
+                    spawnGate();
+                }
+
+                bird.dy += GRAVITY;
+                newBird = { x: bird.x, y: bird.y - bird.dy, w: bird.w, h: bird.h }
+
+                // collisions
+                for (var i = 0; i < displayPipes.length; ++i) {
+                    if (detectStrike(newBird, displayPipes[i])) {
+                        flapping = false;
+                        hideUnhideDom();
+                        main();
+                        break;
+                    }
+                }
+                if (newBird.y + bird.h >= H) {
+                    flapping = false;
+                    hideUnhideDom()
+                    main();
+                }
+                if (flapping) {
+                    bird.y = newBird.y;
+                    if (newBird.y < 0) {
+                        bird.y = 0;
+                        bird.dy = 0;
+                    }
+                }
+
+                // score and time
+                if (time > 0 && time % PIPE_SPACING == 0) {
+                    score += 1;
+                    localStorage.setItem('highest-score', score);
+                    if (score > localStorage.getItem('highest-score', score)) {
+                        localStorage.setItem('highest-score', score);
+                    }
+                }
+                time += 1;
+            }
+            setTimeout(step, 20);
+        }
+
+        init();
+        step();
+
+
+        //function to perform dom manipulation
+        function hideUnhideDom() {
+            afterCrash.style.display = 'block';
+            document.getElementById('score').innerHTML = score;
+            document.getElementById('high-score').innerHTML = localStorage.getItem('highest-score');
+
+        }
+
+
+        //Getting the pipes of differest sizes
+        function spawnGate() {
+            gateUp = Math.floor(Math.random() * (H - TWO_PIPE_HEIGHT_DIFF) + TWO_PIPE_HEIGHT_DIFF / 2)
+            gateUp = Math.max(TWO_PIPE_HEIGHT_DIFF, gateUp);
+            gateUp = Math.min(H - TWO_PIPE_HEIGHT_DIFF, gateUp);
+            displayPipes.push({ x: W, y: 0, w: PIPE_WIDTH, h: gateUp - TWO_PIPE_HEIGHT_DIFF / 2 });
+            displayPipes.push({ x: W, y: gateUp + TWO_PIPE_HEIGHT_DIFF / 2, w: PIPE_WIDTH, h: H - gateUp - TWO_PIPE_HEIGHT_DIFF / 2 });
+        }
+
+        //Controller that is used to start the game and control the flappy
+        document.onclick = function(e) {
+
+            flappyCanvas.style.display = 'block';
+            beforeStart.style.display = 'none';
+
+
+
+            if (e.keyCode === 82) {
+                if (!flapping) {
+                    GRAVITY = -0.5;
+                    init();
+                }
+            }
+        };
+
+        // document.onkeydown = function(e) {
+        //     flappyCanvas.style.display = 'block';
+        //     document.querySelector('.before-start').style.display = 'none';
+        //     if (e.keyCode === 32) {
+        //         document.querySelector('.after-crash').style.display = 'none';
+        //         init();
+
+        //     } else if (e.keyCode === 38)
+        //         if (flapping) {
+        //             bird.dy = FLAPPING;
+        //         }
+        // }
+
+        flappyBird.onclick = function(e) {
+            flappyCanvas.style.display = 'block';
+            beforeStart.style.display = 'none';
+            if (flapping) {
+                bird.dy = FLAPPING;
+            } else {
+                afterCrash.style.display = 'none';
+                init();
+            }
+        }
+
+
+
+        // index
+        let canvas = document.getElementById('canvas');
+        // let sprites = document.getElementById('sprites');
+        let ctx = canvas.getContext('2d');
+        canvas.height = CANVAS_HEIGHT;
+        canvas.width = CANVAS_WIDTH;
+        ctx.imageSmoothingEnabled = false;
+
+
+        //Actual function rending all the Playground Stuffs.
+        function main() {
+            ctx.clearRect(0, 0, W, H);
+            p1 = new PlayGround()
+            p1.displayBackground();
+            p1.displayFloor();
+            p1.displayBird();
+            p1.displayPipes();
+            p1.displayScore();
+            setTimeout(main, 20);
+        }
+
+        main();
+    });
+
+    icon42.addEventListener('click', () => {
+        icons.style.display = 'none';
+        icons_row2.style.display = 'none';
+        icons_row3.style.display = 'none';
+        icons_row4.style.display = 'none';
+
+
+        var targetGame = document.createElement('div');
+        targetGame.className = 'target-game';
+        targetGame.style.width = '260px';
+        targetGame.style.height = '400px';
+        targetGame.style.position = 'absolute';
+        targetGame.style.left = '0px';
+        targetGame.style.background = 'white';
+        homescreen.appendChild(targetGame);
+
+        var drop = document.createElement('div');
+        drop.setAttribute('id', 'drop');
+        targetGame.appendChild(drop);
+
+        var line = document.createElement('div');
+        line.setAttribute('id', 'line');
+        targetGame.appendChild(line);
+
+        var target = document.createElement('div');
+        target.setAttribute('id', 'target');
+        targetGame.appendChild(target);
+        let start = false;
+        line.addEventListener("click", function(e) {
+            if (!start) {
+                start = true;
+                drop.style.display = "block";
+                drop.style.width = "20px";
+                drop.style.height = "20px";
+                drop.style.background = "blue";
+                drop.style.position = "absolute";
+                drop.style.left = e.pageX - 362 + "px";
+                // console.log("Mouse: ", e.pageX);
+
+                const tar_left = Math.round(window.scrollX + target.getBoundingClientRect().left);
+                const drop_left = Math.round(window.scrollX + drop.getBoundingClientRect().left);
+                // console.log("Drop: ", drop_left);
+                let id = null;
+                let pos = 0;
+                clearInterval(id);
+                id = setInterval(frame, 5);
+
+                function frame() {
+                    if (pos == 380) {
+                        clearInterval(id);
+                    } else {
+                        pos++;
+                        drop.style.top = pos + "px";
+                    }
+                }
+
+                if (drop_left === tar_left) {
+                    setTimeout(function() {
+                        alert("Target Matched!");
+                        start = false;
+                    }, 2300);
+                } else {
+                    start = false;
+                }
+
+            }
+
+
+        });
+
+
+
+    });
 
 
 
