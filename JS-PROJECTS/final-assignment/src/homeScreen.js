@@ -95,9 +95,6 @@ function homeScreen() {
 
     function map() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
         var maps = document.createElement("div");
         homescreen.appendChild(maps);
         maps.innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.27689198518!2d85.29111310543334!3d27.709031933706044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1641204469061!5m2!1sen!2snp" width="260" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
@@ -109,9 +106,6 @@ function homeScreen() {
 
     function calendar() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
         homescreen.style.background = 'white';
 
         var calWrap = document.createElement("div");
@@ -178,16 +172,21 @@ function homeScreen() {
     icon3.addEventListener('click', analogClock);
 
     function analogClock() {
-        homescreen.style.background = '#091921';
+        // homescreen.style.background = '#091921';
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
         console.log('Clock');
+
+        var clockApp = document.createElement('div');
+        clockApp.id = 'clock-app';
+        homescreen.appendChild(clockApp);
+        clockApp.style.background = '#091921';
+        clockApp.style.height = '400px';
+        clockApp.style.width = '260px';
+        clockApp.style.position = 'absolute';
 
 
         var clock = document.createElement("div");
-        homescreen.appendChild(clock);
+        clockApp.appendChild(clock);
         clock.classList.add("clock");
 
         var hour = document.createElement("div");
@@ -216,11 +215,11 @@ function homeScreen() {
         sec.appendChild(sc);
 
         var digitalClock = document.createElement("H1");
-        clock.appendChild(digitalClock);
+        clockApp.appendChild(digitalClock);
         digitalClock.style.color = 'white';
         digitalClock.style.position = 'relative';
         digitalClock.style.textAlign = 'center';
-        digitalClock.style.top = '160px';
+        digitalClock.style.top = '50px';
 
         const deg = 6;
         setInterval(() => {
@@ -252,38 +251,11 @@ function homeScreen() {
     };
 
 
-    //Home screen app 2nd row
-    // var icons_row2 = document.createElement("div");
-    // icons_row2.style.display = 'flex';
-    // icons_row2.style.height = '70px';
-    // icons_row2.style.padding = '10px 0px';
-    // homescreen.appendChild(icons_row2);
-    // var icon21 = document.createElement('img');
-    // var icon22 = document.createElement('img');
-    // var icon23 = document.createElement('img');
-    // var icon24 = document.createElement('img');
-    // icon21.src = "./images/youtube.svg";
-    // icon22.src = "./images/apple-music.svg";
-    // icon23.src = "./images/calculator.svg";
-    // icon24.src = "./images/weather.svg";
-    // icons_row2.appendChild(icon21);
-    // icons_row2.appendChild(icon22);
-    // icons_row2.appendChild(icon23);
-    // icons_row2.appendChild(icon24);
-    // icon21.style.margin = '0px 7px';
-    // icon22.style.margin = '0px 7px';
-    // icon23.style.margin = '0px 7px';
-    // icon24.style.margin = '0px 7px';
-
-
     // Youtube
     icon21.addEventListener('click', youtubeApp);
 
     function youtubeApp() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
         var youtube = document.createElement("div");
         homescreen.appendChild(youtube);
         youtube.innerHTML = `<iframe width="260" height="400" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
@@ -295,9 +267,6 @@ function homeScreen() {
 
     function musicPlayer() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
 
         var player = document.createElement('div');
         player.className = 'player';
@@ -495,9 +464,6 @@ function homeScreen() {
 
     function calculator() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
 
         var calculatorApp = document.createElement("div");
         homescreen.appendChild(calculatorApp);
@@ -561,9 +527,6 @@ function homeScreen() {
 
     function weather() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
 
         var weatherApp = document.createElement('div');
         weatherApp.className = 'weatherApp';
@@ -632,37 +595,11 @@ function homeScreen() {
         });
     };
 
-    // // row3
-    // var icons_row3 = document.createElement("div");
-    // icons_row3.style.display = 'flex';
-    // icons_row3.style.height = '70px';
-    // icons_row3.style.padding = '10px 0px';
-    // homescreen.appendChild(icons_row3);
-    // var icon31 = document.createElement('img');
-    // var icon32 = document.createElement('img');
-    // var icon33 = document.createElement('img');
-    // var icon34 = document.createElement('img');
-    // icon31.src = "./images/notes.svg";
-    // icon32.src = "./images/clips.svg";
-    // icon33.src = "./images/photos.svg";
-    // icon34.src = "./images/pencil.png";
-    // icons_row3.appendChild(icon31);
-    // icons_row3.appendChild(icon32);
-    // icons_row3.appendChild(icon33);
-    // icons_row3.appendChild(icon34);
-    // icon31.style.margin = '0px 7px';
-    // icon32.style.margin = '0px 7px';
-    // icon33.style.margin = '0px 7px';
-    // icon34.style.margin = '0px 7px';
-
     // Notes App
     icon31.addEventListener('click', notes);
 
     function notes() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
 
         var memoApp = document.createElement('div');
         memoApp.className = 'memo-app';
@@ -749,9 +686,6 @@ function homeScreen() {
 
     function videoPlayer() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
 
         var videoApp = document.createElement('div');
         videoApp.className = 'video-player';
@@ -786,9 +720,6 @@ function homeScreen() {
 
     function photoViewer() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
 
         var photoApp = document.createElement('div');
         photoApp.style.width = '260px';
@@ -900,9 +831,6 @@ function homeScreen() {
 
     function doodleApp() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
 
         var pencilApp = document.createElement('div');
         pencilApp.className = 'pencil-app';
@@ -1034,34 +962,12 @@ function homeScreen() {
 
     };
 
-    // // Row4
-    // var icons_row4 = document.createElement("div");
-    // icons_row4.style.display = 'flex';
-    // icons_row4.style.height = '70px';
-    // icons_row4.style.padding = '10px 0px';
-    // homescreen.appendChild(icons_row4);
-    // var icon41 = document.createElement('img');
-    // var icon42 = document.createElement('img');
-    // var icon43 = document.createElement('img');
-    // icon41.src = "./images/flappy.png";
-    // icon42.src = "./images/target.svg";
-    // icon43.src = "./images/appreciation.svg";
-    // icons_row4.appendChild(icon41);
-    // icons_row4.appendChild(icon42);
-    // icons_row4.appendChild(icon43);
-    // icon41.style.margin = '0px 7px';
-    // icon42.style.margin = '0px 7px';
-    // icon43.style.margin = '0px 7px';
 
     // Flappy Bird
     icon41.addEventListener('click', flappyBirdApp)
 
     function flappyBirdApp() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
-
 
         var flappyBird = document.createElement('div');
         flappyBird.className = 'flappy-bird';
@@ -1452,10 +1358,6 @@ function homeScreen() {
 
     function targetGameApp() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
-
 
         var targetGame = document.createElement('div');
         targetGame.className = 'target-game';
@@ -1543,10 +1445,6 @@ function homeScreen() {
 
     function breakoutGame() {
         icons.style.display = 'none';
-        icons_row2.style.display = 'none';
-        icons_row3.style.display = 'none';
-        icons_row4.style.display = 'none';
-
 
         var breakout = document.createElement('div');
         breakout.className = 'breakout';
