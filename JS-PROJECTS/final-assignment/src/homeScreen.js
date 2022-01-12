@@ -11,7 +11,7 @@ function rotate() {
 }
 
 
-var backBtn = document.createElement('button');
+const backBtn = document.createElement('button');
 emulator.appendChild(backBtn);
 backBtn.setAttribute('id', 'back-button');
 
@@ -762,10 +762,12 @@ function homeScreen() {
         var prev = document.createElement('div');
         prev.classList.add('prev', 'nav-btn');
         navigation.appendChild(prev);
+        prev.innerHTML = '<';
 
         var next = document.createElement('div');
         next.classList.add('next', 'nav-btn');
         navigation.appendChild(next);
+        next.innerHTML = ">";
 
         var carousel = document.createElement('div');
         carousel.className = 'carousel';
