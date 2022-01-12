@@ -156,8 +156,11 @@ body {
     opacity: 0.2;
 }
 
-
-/* lock button */
+.icon-set img {
+    padding: 10px 0px;
+    margin: 0px 7px;
+    width: 50px;
+}
 
 
 /* camera */

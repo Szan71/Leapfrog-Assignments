@@ -1,24 +1,3 @@
-var emulator = document.querySelector('.emulator');
-let rotateDegree = 0;
-document.getElementById('rotatebtn').addEventListener('click', rotate);
-
-function rotate() {
-    if (rotateDegree > 360) {
-        rotateDegree = 90;
-    }
-    rotateDegree = rotateDegree + 90
-    emulator.style.transform = `rotate(${rotateDegree}deg)`;
-}
-
-
-const backBtn = document.createElement('button');
-emulator.appendChild(backBtn);
-backBtn.setAttribute('id', 'back-button');
-
-document.getElementById('lock').addEventListener('click', () => {
-    document.location.reload();
-});
-
 function homeScreen() {
     lockScreen.style.display = 'none';
     passcode.style.display = 'none';
@@ -42,9 +21,10 @@ function homeScreen() {
 
     // row 1
     var icons = document.createElement("div");
+    icons.className = 'icon-set';
     icons.style.display = 'flex';
     icons.style.height = '70px';
-    icons.style.padding = '10px 0px';
+    icons.style.flexWrap = 'wrap';
     homescreen.appendChild(icons);
     var icon1 = document.createElement('img');
     var icon2 = document.createElement('img');
@@ -58,26 +38,62 @@ function homeScreen() {
     icons.appendChild(icon2);
     icons.appendChild(icon3);
     icons.appendChild(icon4);
-    icon1.style.margin = '0px 7px';
-    icon2.style.margin = '0px 7px';
-    icon3.style.margin = '0px 7px';
-    icon4.style.margin = '0px 7px';
+
+    // row2
+    var icon21 = document.createElement('img');
+    var icon22 = document.createElement('img');
+    var icon23 = document.createElement('img');
+    var icon24 = document.createElement('img');
+    icon21.src = "./images/youtube.svg";
+    icon22.src = "./images/apple-music.svg";
+    icon23.src = "./images/calculator.svg";
+    icon24.src = "./images/weather.svg";
+    icons.appendChild(icon21);
+    icons.appendChild(icon22);
+    icons.appendChild(icon23);
+    icons.appendChild(icon24);
+
+    // row3
+    var icon31 = document.createElement('img');
+    var icon32 = document.createElement('img');
+    var icon33 = document.createElement('img');
+    var icon34 = document.createElement('img');
+    icon31.src = "./images/notes.svg";
+    icon32.src = "./images/clips.svg";
+    icon33.src = "./images/photos.svg";
+    icon34.src = "./images/pencil.png";
+    icons.appendChild(icon31);
+    icons.appendChild(icon32);
+    icons.appendChild(icon33);
+    icons.appendChild(icon34);
+
+    // Row4
+    var icon41 = document.createElement('img');
+    var icon42 = document.createElement('img');
+    var icon43 = document.createElement('img');
+    icon41.src = "./images/flappy.png";
+    icon42.src = "./images/target.svg";
+    icon43.src = "./images/appreciation.svg";
+    icons.appendChild(icon41);
+    icons.appendChild(icon42);
+    icons.appendChild(icon43);
 
     // camera
-    icon1.addEventListener('click', () => {
+    icon1.addEventListener('click', camera);
 
+    function camera() {
         console.log('Camera');
         var cameraHome = document.createElement("video");
         cameraHome.style.position = 'absolute';
         cameraHome.style.top = '0px';
         homescreen.appendChild(cameraHome);
         cameraInterface();
-
-    });
-
+    }
 
     // maps
-    icon2.addEventListener('click', () => {
+    icon2.addEventListener('click', map);
+
+    function map() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -85,11 +101,13 @@ function homeScreen() {
         var maps = document.createElement("div");
         homescreen.appendChild(maps);
         maps.innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.27689198518!2d85.29111310543334!3d27.709031933706044!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600!5e0!3m2!1sen!2snp!4v1641204469061!5m2!1sen!2snp" width="260" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`;
+    }
 
-    });
 
     // calendar with events
-    icon4.addEventListener('click', () => {
+    icon4.addEventListener('click', calendar);
+
+    function calendar() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -153,11 +171,13 @@ function homeScreen() {
         evtSave.setAttribute("value", "Save");
 
         cal.init();
+    };
 
-    });
 
+    //Analog Clock
+    icon3.addEventListener('click', analogClock);
 
-    icon3.addEventListener('click', () => {
+    function analogClock() {
         homescreen.style.background = '#091921';
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
@@ -209,9 +229,7 @@ function homeScreen() {
             let mm = day.getMinutes() * deg;
             let ss = day.getSeconds() * deg;
 
-            hr.style.transform = `rotateZ(${
-        (hh) + (mm / 12)
-      }deg)`;
+            hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
             mn.style.transform = `rotateZ(${mm}deg)`;
             sc.style.transform = `rotateZ(${ss}deg)`;
 
@@ -231,31 +249,37 @@ function homeScreen() {
 
         });
 
-    });
+    };
 
-    var icons_row2 = document.createElement("div");
-    icons_row2.style.display = 'flex';
-    icons_row2.style.height = '70px';
-    icons_row2.style.padding = '10px 0px';
-    homescreen.appendChild(icons_row2);
-    var icon21 = document.createElement('img');
-    var icon22 = document.createElement('img');
-    var icon23 = document.createElement('img');
-    var icon24 = document.createElement('img');
-    icon21.src = "./images/youtube.svg";
-    icon22.src = "./images/apple-music.svg";
-    icon23.src = "./images/calculator.svg";
-    icon24.src = "./images/weather.svg";
-    icons_row2.appendChild(icon21);
-    icons_row2.appendChild(icon22);
-    icons_row2.appendChild(icon23);
-    icons_row2.appendChild(icon24);
-    icon21.style.margin = '0px 7px';
-    icon22.style.margin = '0px 7px';
-    icon23.style.margin = '0px 7px';
-    icon24.style.margin = '0px 7px';
 
-    icon21.addEventListener('click', () => {
+    //Home screen app 2nd row
+    // var icons_row2 = document.createElement("div");
+    // icons_row2.style.display = 'flex';
+    // icons_row2.style.height = '70px';
+    // icons_row2.style.padding = '10px 0px';
+    // homescreen.appendChild(icons_row2);
+    // var icon21 = document.createElement('img');
+    // var icon22 = document.createElement('img');
+    // var icon23 = document.createElement('img');
+    // var icon24 = document.createElement('img');
+    // icon21.src = "./images/youtube.svg";
+    // icon22.src = "./images/apple-music.svg";
+    // icon23.src = "./images/calculator.svg";
+    // icon24.src = "./images/weather.svg";
+    // icons_row2.appendChild(icon21);
+    // icons_row2.appendChild(icon22);
+    // icons_row2.appendChild(icon23);
+    // icons_row2.appendChild(icon24);
+    // icon21.style.margin = '0px 7px';
+    // icon22.style.margin = '0px 7px';
+    // icon23.style.margin = '0px 7px';
+    // icon24.style.margin = '0px 7px';
+
+
+    // Youtube
+    icon21.addEventListener('click', youtubeApp);
+
+    function youtubeApp() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -264,9 +288,12 @@ function homeScreen() {
         homescreen.appendChild(youtube);
         youtube.innerHTML = `<iframe width="260" height="400" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
 
-    });
+    };
 
-    icon22.addEventListener('click', () => {
+    // Music Player
+    icon22.addEventListener('click', musicPlayer);
+
+    function musicPlayer() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -460,9 +487,13 @@ function homeScreen() {
             song.currentTime = progressBar.value;
         };
 
-    })
+    };
 
-    icon23.addEventListener('click', () => {
+
+    //    Calculator 
+    icon23.addEventListener('click', calculator);
+
+    function calculator() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -522,9 +553,13 @@ function homeScreen() {
             }
         }
 
-    });
+    };
 
-    icon24.addEventListener('click', () => {
+
+    // Weather app
+    icon24.addEventListener('click', weather);
+
+    function weather() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -595,32 +630,35 @@ function homeScreen() {
                 getWeatherByLocation(city)
             }
         });
-    });
+    };
 
-    var icons_row3 = document.createElement("div");
-    icons_row3.style.display = 'flex';
-    icons_row3.style.height = '70px';
-    icons_row3.style.padding = '10px 0px';
-    homescreen.appendChild(icons_row3);
-    var icon31 = document.createElement('img');
-    var icon32 = document.createElement('img');
-    var icon33 = document.createElement('img');
-    var icon34 = document.createElement('img');
-    icon31.src = "./images/notes.svg";
-    icon32.src = "./images/clips.svg";
-    icon33.src = "./images/photos.svg";
-    icon34.src = "./images/pen.svg";
-    icons_row3.appendChild(icon31);
-    icons_row3.appendChild(icon32);
-    icons_row3.appendChild(icon33);
-    icons_row3.appendChild(icon34);
-    icon31.style.margin = '0px 7px';
-    icon32.style.margin = '0px 7px';
-    icon33.style.margin = '0px 7px';
-    icon34.style.margin = '0px 7px';
+    // // row3
+    // var icons_row3 = document.createElement("div");
+    // icons_row3.style.display = 'flex';
+    // icons_row3.style.height = '70px';
+    // icons_row3.style.padding = '10px 0px';
+    // homescreen.appendChild(icons_row3);
+    // var icon31 = document.createElement('img');
+    // var icon32 = document.createElement('img');
+    // var icon33 = document.createElement('img');
+    // var icon34 = document.createElement('img');
+    // icon31.src = "./images/notes.svg";
+    // icon32.src = "./images/clips.svg";
+    // icon33.src = "./images/photos.svg";
+    // icon34.src = "./images/pencil.png";
+    // icons_row3.appendChild(icon31);
+    // icons_row3.appendChild(icon32);
+    // icons_row3.appendChild(icon33);
+    // icons_row3.appendChild(icon34);
+    // icon31.style.margin = '0px 7px';
+    // icon32.style.margin = '0px 7px';
+    // icon33.style.margin = '0px 7px';
+    // icon34.style.margin = '0px 7px';
 
+    // Notes App
+    icon31.addEventListener('click', notes);
 
-    icon31.addEventListener('click', () => {
+    function notes() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -703,11 +741,13 @@ function homeScreen() {
         //Get the value of the message from local storage
         document.getElementById('message').value = localStorage.getItem('message')
 
+    };
 
 
-    });
+    // Video Player
+    icon32.addEventListener('click', videoPlayer);
 
-    icon32.addEventListener('click', () => {
+    function videoPlayer() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -737,11 +777,14 @@ function homeScreen() {
 
         var videoSource = document.createElement('source');
         videoPlayer.appendChild(videoSource);
-        videoSource.setAttribute('src', 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4')
+        videoSource.src = 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4';
         videoSource.setAttribute('type', 'video/mp4');
-    });
+    };
 
-    icon33.addEventListener('click', () => {
+    // Photo Viewer
+    icon33.addEventListener('click', photoViewer);
+
+    function photoViewer() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -850,9 +893,12 @@ function homeScreen() {
             }
             images[index].classList.add('main-item');
         }
-    });
+    };
 
-    icon34.addEventListener('click', () => {
+    // Doodle App
+    icon34.addEventListener('click', doodleApp);
+
+    function doodleApp() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -986,28 +1032,31 @@ function homeScreen() {
 
         clearEl.addEventListener('click', () => ctx.clearRect(0, 0, canvas.width, canvas.height))
 
-    });
+    };
 
+    // // Row4
+    // var icons_row4 = document.createElement("div");
+    // icons_row4.style.display = 'flex';
+    // icons_row4.style.height = '70px';
+    // icons_row4.style.padding = '10px 0px';
+    // homescreen.appendChild(icons_row4);
+    // var icon41 = document.createElement('img');
+    // var icon42 = document.createElement('img');
+    // var icon43 = document.createElement('img');
+    // icon41.src = "./images/flappy.png";
+    // icon42.src = "./images/target.svg";
+    // icon43.src = "./images/appreciation.svg";
+    // icons_row4.appendChild(icon41);
+    // icons_row4.appendChild(icon42);
+    // icons_row4.appendChild(icon43);
+    // icon41.style.margin = '0px 7px';
+    // icon42.style.margin = '0px 7px';
+    // icon43.style.margin = '0px 7px';
 
-    var icons_row4 = document.createElement("div");
-    icons_row4.style.display = 'flex';
-    icons_row4.style.height = '70px';
-    icons_row4.style.padding = '10px 0px';
-    homescreen.appendChild(icons_row4);
-    var icon41 = document.createElement('img');
-    var icon42 = document.createElement('img');
-    var icon43 = document.createElement('img');
-    icon41.src = "./images/flappy.png";
-    icon42.src = "./images/target.svg";
-    icon43.src = "./images/target.svg";
-    icons_row4.appendChild(icon41);
-    icons_row4.appendChild(icon42);
-    icons_row4.appendChild(icon43);
-    icon41.style.margin = '0px 7px';
-    icon42.style.margin = '0px 7px';
-    icon43.style.margin = '0px 7px';
+    // Flappy Bird
+    icon41.addEventListener('click', flappyBirdApp)
 
-    icon41.addEventListener('click', () => {
+    function flappyBirdApp() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -1359,18 +1408,6 @@ function homeScreen() {
             }
         };
 
-        // document.onkeydown = function(e) {
-        //     flappyCanvas.style.display = 'block';
-        //     document.querySelector('.before-start').style.display = 'none';
-        //     if (e.keyCode === 32) {
-        //         document.querySelector('.after-crash').style.display = 'none';
-        //         init();
-
-        //     } else if (e.keyCode === 38)
-        //         if (flapping) {
-        //             bird.dy = FLAPPING;
-        //         }
-        // }
 
         flappyBird.onclick = function(e) {
             flappyCanvas.style.display = 'block';
@@ -1407,9 +1444,13 @@ function homeScreen() {
         }
 
         main();
-    });
+    };
 
-    icon42.addEventListener('click', () => {
+
+    // Target Game
+    icon42.addEventListener('click', targetGameApp);
+
+    function targetGameApp() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -1439,20 +1480,6 @@ function homeScreen() {
         var target = document.createElement('div');
         target.setAttribute('id', 'target');
         targetGame.appendChild(target);
-
-
-        // let pos2 = 0;
-        // let direction = 1;
-        // const id1 = setInterval(() => {
-
-        //     if (pos2 == 240) {
-        //         direction = -1;
-        //     } else if (pos2 == 0) {
-        //         direction = 1;
-        //     }
-        //     pos2 += direction;
-        //     target.style.left = pos2 + "px";
-        // }, 50);
 
 
         let start = false;
@@ -1509,11 +1536,12 @@ function homeScreen() {
 
         });
 
+    };
 
+    // Breakout Game
+    icon43.addEventListener('click', breakoutGame);
 
-    });
-
-    icon43.addEventListener('click', () => {
+    function breakoutGame() {
         icons.style.display = 'none';
         icons_row2.style.display = 'none';
         icons_row3.style.display = 'none';
@@ -1558,14 +1586,14 @@ function homeScreen() {
         };
 
         // use a 2px gap between each brick
-        const brickGap = 2;
+        const brickGap = 3;
         const brickWidth = 15;
         const brickHeight = 5;
 
         // the wall width takes up the remaining space of the canvas width. with 14 bricks
         // and 13 2px gaps between them, thats: 400 - (14 * 25 + 2 * 13) = 24px. so each
         // wall will be 12px
-        const wallSize = 5;
+        const wallSize = 0;
         const bricks = [];
 
         // create the level by looping over each row and column in the level1 array
@@ -1598,11 +1626,11 @@ function homeScreen() {
         const ball = {
             x: 100,
             y: 40,
-            width: 5,
+            width: 10,
             height: 5,
 
             // how fast the ball should go in either the x or y direction
-            speed: 0.5,
+            speed: 0.9,
 
             // ball velocity
             dx: 0,
@@ -1654,8 +1682,8 @@ function homeScreen() {
 
             // reset ball if it goes below the screen
             if (ball.y > breakoutCanvas.height) {
-                ball.x = 130;
-                ball.y = 260;
+                ball.x = 100;
+                ball.y = 40;
                 ball.dx = 0;
                 ball.dy = 0;
             }
@@ -1747,6 +1775,6 @@ function homeScreen() {
         requestAnimationFrame(loop);
 
 
-    });
+    };
 
 }

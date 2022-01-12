@@ -21,6 +21,11 @@ cameraBtn[0].addEventListener("click", (event) => {
     flashlight.style.width = '260px';
     flashlight.style.position = 'absolute';
     flashlight.style.top = '1px';
+    backBtn.addEventListener('click', () => {
+        let lockScreenDivs = Array.from(document.getElementsByClassName('phone'));
+        lockScreenDivs.forEach((el) => { el.remove() })
+        document.location.reload();
+    });
 
 });
 
@@ -37,4 +42,9 @@ cameraBtn[1].addEventListener("click", (event) => {
     camera.style.top = '1px';
 
     cameraInterface();
+    backBtn.addEventListener('click', () => {
+        let lockScreenDivs = Array.from(document.getElementsByClassName('phone'));
+        lockScreenDivs.forEach((el) => { el.remove() })
+        document.location.reload();
+    });
 });
