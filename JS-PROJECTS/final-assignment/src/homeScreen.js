@@ -19,70 +19,71 @@ function homeScreen() {
         homeScreen();
     });
 
-    // row 1
+
     var icons = document.createElement("div");
     icons.className = 'icon-set';
     icons.style.display = 'flex';
     icons.style.height = '70px';
     icons.style.flexWrap = 'wrap';
     homescreen.appendChild(icons);
-    var icon1 = document.createElement('img');
-    var icon2 = document.createElement('img');
-    var icon3 = document.createElement('img');
-    var icon4 = document.createElement('img');
-    icon1.src = "./images/camera.svg";
-    icon2.src = "./images/maps.svg";
-    icon3.src = "./images/clock.svg";
-    icon4.src = "./images/calendar.svg";
-    icons.appendChild(icon1);
-    icons.appendChild(icon2);
-    icons.appendChild(icon3);
-    icons.appendChild(icon4);
+
+    // row 1
+    var cameraIcon = document.createElement('img');
+    var mapIcon = document.createElement('img');
+    var clockIcon = document.createElement('img');
+    var calendarIcon = document.createElement('img');
+    cameraIcon.src = "./images/camera.svg";
+    mapIcon.src = "./images/maps.svg";
+    clockIcon.src = "./images/clock.svg";
+    calendarIcon.src = "./images/calendar.svg";
+    icons.appendChild(cameraIcon);
+    icons.appendChild(mapIcon);
+    icons.appendChild(clockIcon);
+    icons.appendChild(calendarIcon);
 
     // row2
-    var icon21 = document.createElement('img');
-    var icon22 = document.createElement('img');
-    var icon23 = document.createElement('img');
-    var icon24 = document.createElement('img');
-    icon21.src = "./images/youtube.svg";
-    icon22.src = "./images/apple-music.svg";
-    icon23.src = "./images/calculator.svg";
-    icon24.src = "./images/weather.svg";
-    icons.appendChild(icon21);
-    icons.appendChild(icon22);
-    icons.appendChild(icon23);
-    icons.appendChild(icon24);
+    var youtubeIcon = document.createElement('img');
+    var MusicIcon = document.createElement('img');
+    var CalculatorIcon = document.createElement('img');
+    var weatherIcon = document.createElement('img');
+    youtubeIcon.src = "./images/youtube.svg";
+    MusicIcon.src = "./images/apple-music.svg";
+    CalculatorIcon.src = "./images/calculator.svg";
+    weatherIcon.src = "./images/weather.svg";
+    icons.appendChild(youtubeIcon);
+    icons.appendChild(MusicIcon);
+    icons.appendChild(CalculatorIcon);
+    icons.appendChild(weatherIcon);
 
     // row3
-    var icon31 = document.createElement('img');
-    var icon32 = document.createElement('img');
-    var icon33 = document.createElement('img');
-    var icon34 = document.createElement('img');
-    icon31.src = "./images/notes.svg";
-    icon32.src = "./images/clips.svg";
-    icon33.src = "./images/photos.svg";
-    icon34.src = "./images/pencil.png";
-    icons.appendChild(icon31);
-    icons.appendChild(icon32);
-    icons.appendChild(icon33);
-    icons.appendChild(icon34);
+    var notesIcon = document.createElement('img');
+    var videoIcon = document.createElement('img');
+    var photosIcon = document.createElement('img');
+    var pencilIcon = document.createElement('img');
+    notesIcon.src = "./images/notes.svg";
+    videoIcon.src = "./images/clips.svg";
+    photosIcon.src = "./images/photos.svg";
+    pencilIcon.src = "./images/pencil.png";
+    icons.appendChild(notesIcon);
+    icons.appendChild(videoIcon);
+    icons.appendChild(photosIcon);
+    icons.appendChild(pencilIcon);
 
     // Row4
-    var icon41 = document.createElement('img');
-    var icon42 = document.createElement('img');
-    var icon43 = document.createElement('img');
-    icon41.src = "./images/flappy.png";
-    icon42.src = "./images/target.svg";
-    icon43.src = "./images/appreciation.svg";
-    icons.appendChild(icon41);
-    icons.appendChild(icon42);
-    icons.appendChild(icon43);
+    var flappyBirdIcon = document.createElement('img');
+    var targetGameIcon = document.createElement('img');
+    var breakoutGameIcon = document.createElement('img');
+    flappyBirdIcon.src = "./images/flappy.png";
+    targetGameIcon.src = "./images/target.svg";
+    breakoutGameIcon.src = "./images/appreciation.svg";
+    icons.appendChild(flappyBirdIcon);
+    icons.appendChild(targetGameIcon);
+    icons.appendChild(breakoutGameIcon);
 
     // camera
-    icon1.addEventListener('click', camera);
+    cameraIcon.addEventListener('click', camera);
 
     function camera() {
-        console.log('Camera');
         var cameraHome = document.createElement("video");
         cameraHome.style.position = 'absolute';
         cameraHome.style.top = '0px';
@@ -91,7 +92,7 @@ function homeScreen() {
     }
 
     // maps
-    icon2.addEventListener('click', map);
+    mapIcon.addEventListener('click', map);
 
     function map() {
         icons.style.display = 'none';
@@ -102,7 +103,7 @@ function homeScreen() {
 
 
     // calendar with events
-    icon4.addEventListener('click', calendar);
+    calendarIcon.addEventListener('click', calendar);
 
     function calendar() {
         icons.style.display = 'none';
@@ -169,12 +170,11 @@ function homeScreen() {
 
 
     //Analog Clock
-    icon3.addEventListener('click', analogClock);
+    clockIcon.addEventListener('click', analogClock);
 
     function analogClock() {
         // homescreen.style.background = '#091921';
         icons.style.display = 'none';
-        console.log('Clock');
 
         var clockApp = document.createElement('div');
         clockApp.id = 'clock-app';
@@ -252,7 +252,7 @@ function homeScreen() {
 
 
     // Youtube
-    icon21.addEventListener('click', youtubeApp);
+    youtubeIcon.addEventListener('click', youtubeApp);
 
     function youtubeApp() {
         icons.style.display = 'none';
@@ -263,7 +263,7 @@ function homeScreen() {
     };
 
     // Music Player
-    icon22.addEventListener('click', musicPlayer);
+    MusicIcon.addEventListener('click', musicPlayer);
 
     function musicPlayer() {
         icons.style.display = 'none';
@@ -460,7 +460,7 @@ function homeScreen() {
 
 
     //    Calculator 
-    icon23.addEventListener('click', calculator);
+    CalculatorIcon.addEventListener('click', calculator);
 
     function calculator() {
         icons.style.display = 'none';
@@ -523,7 +523,7 @@ function homeScreen() {
 
 
     // Weather app
-    icon24.addEventListener('click', weather);
+    weatherIcon.addEventListener('click', weather);
 
     function weather() {
         icons.style.display = 'none';
@@ -534,36 +534,56 @@ function homeScreen() {
         weatherApp.style.height = '400px';
         weatherApp.style.position = 'absolute';
         weatherApp.style.left = '0px';
-        weatherApp.style.background = 'black';
+        weatherApp.style.background = '#3091be';
         homescreen.appendChild(weatherApp);
 
-        var weatherForm = document.createElement('form');
-        weatherForm.setAttribute('id', 'form');
-        weatherApp.appendChild(weatherForm);
+        var weatherAppMain = document.createElement('div');
+        weatherApp.appendChild(weatherAppMain);
+        weatherAppMain.style.position = 'absolute';
+        weatherAppMain.style.top = '70px';
+        weatherAppMain.style.textAlign = 'center';
 
-        var weatherInput = document.createElement('input');
-        weatherForm.appendChild(weatherInput);
-        weatherInput.setAttribute('type', 'text');
-        weatherInput.setAttribute('id', 'search');
-        weatherInput.setAttribute('placeholder', 'Search by location');
-        weatherInput.setAttribute('autocomplete', 'off');
+        var currentCity = document.createElement('h3');
+        currentCity.id = 'current-city';
+        weatherAppMain.appendChild(currentCity);
+        currentCity.style.fontSize = '30px';
+        currentCity.style.fontWeight = '250';
+
+        var weatherState = document.createElement('h3');
+        weatherState.id = 'weather-state';
+        weatherAppMain.appendChild(weatherState);
+        weatherState.style.fontSize = '20px';
+        weatherState.style.fontWeight = '100';
 
 
-        var weatherMain = document.createElement('main');
-        weatherApp.appendChild(weatherMain);
-        weatherMain.setAttribute('id', 'main');
+        var currentTemp = document.createElement('h1');
+        currentTemp.id = 'current-time';
+        weatherAppMain.appendChild(currentTemp);
+        currentTemp.style.fontSize = '70px';
+        currentTemp.style.fontWeight = '250';
+
+
+        // var weatherInput = document.createElement('input');
+        // weatherForm.appendChild(weatherInput);
+        // weatherInput.setAttribute('type', 'text');
+        // weatherInput.setAttribute('id', 'search');
+        // weatherInput.setAttribute('placeholder', 'Search by location');
+        // weatherInput.setAttribute('autocomplete', 'off');
+
+
+        // var weatherMain = document.createElement('main');
+        // weatherApp.appendChild(weatherMain);
+        // weatherMain.setAttribute('id', 'main');
 
         const apiKey = "5716b71f47305d867f16fe7d50244c20";
         const main = document.getElementById('main');
-        const form = document.getElementById('form');
-        const search = document.getElementById('search');
-        const url = (city) => `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-        // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`).then(
-        //     res => console.log(res)
-        // );
+        // const form = document.getElementById('form');
+        // const search = document.getElementById('search');
+        const city = "Kathmandu";
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5716b71f47305d867f16fe7d50244c20`;
 
-        async function getWeatherByLocation(city) {
-            const resp = await fetch(url(city), {
+        async function getWeatherByLocation() {
+            const resp = await fetch(url, {
                 origin: "cros"
             });
             const respData = await resp.json();
@@ -572,31 +592,25 @@ function homeScreen() {
 
         function addWeatherToPage(data) {
             const temp = Ktoc(data.main.temp);
+            currentCity.innerHTML = city;
+            weatherState.innerHTML = data.weather[0].main;
+            currentTemp.innerHTML = `${temp}°`;
             const weather = document.createElement('div')
             weather.classList.add('weather');
             weather.innerHTML = `  
-      <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /> ${temp}°C <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></h2>  
-      <small>${data.weather[0].main}</small>  
-      `;
-            //  cleanup   
-            main.innerHTML = "";
-            main.appendChild(weather);
+            <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />`;
+
+            weatherAppMain.appendChild(weather);
         };
 
         function Ktoc(K) {
             return Math.floor(K - 273.15);
         }
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const city = search.value;
-            if (city) {
-                getWeatherByLocation(city)
-            }
-        });
+        getWeatherByLocation()
     };
 
     // Notes App
-    icon31.addEventListener('click', notes);
+    notesIcon.addEventListener('click', notes);
 
     function notes() {
         icons.style.display = 'none';
@@ -641,9 +655,6 @@ function homeScreen() {
                 localStorage.setItem('title', input);
                 document.getElementById('title').value = localStorage.getItem('title');
 
-                //Test
-                console.log('Title saved.')
-                    //document.getElementById('test').innerHTML = localStorage.getItem('title')
 
             } else { //Throw an error if browser doesn't support local storage
                 document.getElementById('test').innerHTML('Sorry, your browser does not support Web Storage...')
@@ -665,9 +676,6 @@ function homeScreen() {
                 localStorage.setItem('message', messageInput);
                 document.getElementById('message').value = localStorage.getItem('message')
 
-                //Test
-                console.log('Message saved.')
-                    //document.getElementById('test').innerHTML = localStorage.getItem('message')
 
             } else { //Throw an error if browser doesn't support local storage
                 document.getElementById('test').innerHTML('Sorry, your browser does not support Web Storage...')
@@ -682,7 +690,7 @@ function homeScreen() {
 
 
     // Video Player
-    icon32.addEventListener('click', videoPlayer);
+    videoIcon.addEventListener('click', videoPlayer);
 
     function videoPlayer() {
         icons.style.display = 'none';
@@ -716,7 +724,7 @@ function homeScreen() {
     };
 
     // Photo Viewer
-    icon33.addEventListener('click', photoViewer);
+    photosIcon.addEventListener('click', photoViewer);
 
     function photoViewer() {
         icons.style.display = 'none';
@@ -827,7 +835,7 @@ function homeScreen() {
     };
 
     // Doodle App
-    icon34.addEventListener('click', doodleApp);
+    pencilIcon.addEventListener('click', doodleApp);
 
     function doodleApp() {
         icons.style.display = 'none';
@@ -964,7 +972,7 @@ function homeScreen() {
 
 
     // Flappy Bird
-    icon41.addEventListener('click', flappyBirdApp)
+    flappyBirdIcon.addEventListener('click', flappyBirdApp)
 
     function flappyBirdApp() {
         icons.style.display = 'none';
@@ -1011,6 +1019,13 @@ function homeScreen() {
         beforeStart.appendChild(instructionP1);
         instructionP1.setAttribute('id', 'instruction');
         instructionP1.innerHTML = 'PLAY';
+
+        var instructionP2 = document.createElement('p');
+        beforeStart.appendChild(instructionP2);
+        instructionP2.setAttribute('id', 'instructionP2');
+        instructionP2.innerHTML = 'Instruction: Keep clicking to stay high up in the sky. Avoid collision with the pipes';
+
+
 
         var afterCrash = document.createElement('div');
         afterCrash.className = 'after-crash';
@@ -1354,7 +1369,7 @@ function homeScreen() {
 
 
     // Target Game
-    icon42.addEventListener('click', targetGameApp);
+    targetGameIcon.addEventListener('click', targetGameApp);
 
     function targetGameApp() {
         icons.style.display = 'none';
@@ -1398,7 +1413,6 @@ function homeScreen() {
 
                 const tar_left = Math.round(window.scrollX + target.getBoundingClientRect().left);
                 const drop_left = Math.round(window.scrollX + drop.getBoundingClientRect().left);
-                console.log("Drop: ", drop_left);
                 let id = null;
                 let pos = 0;
 
@@ -1441,7 +1455,7 @@ function homeScreen() {
     };
 
     // Breakout Game
-    icon43.addEventListener('click', breakoutGame);
+    breakoutGameIcon.addEventListener('click', breakoutGame);
 
     function breakoutGame() {
         icons.style.display = 'none';
@@ -1461,6 +1475,7 @@ function homeScreen() {
         var breakoutCanvas = document.createElement('canvas');
         breakoutCanvas.style.width = '260px';
         breakoutCanvas.style.height = '400px';
+        breakoutCanvas.style.padding = '10px';
         breakoutCanvas.id = 'game';
         breakout.appendChild(breakoutCanvas);
 
