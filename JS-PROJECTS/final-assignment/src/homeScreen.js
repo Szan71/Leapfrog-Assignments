@@ -198,6 +198,9 @@ function homeScreen() {
                 calWrap.style.width = '260px';
                 calWrap.style.right = '0px';
                 calWrap.style.top = '0px';
+            } else if (rotateDegree == 450) {
+
+
             }
         }
     };
