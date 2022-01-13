@@ -30,7 +30,6 @@ function passCheck($event) {
     }
 
     if (myCipher(pwd.join("")) === '393a3b3c') {
-        console.log(myCipher(pwd.join("")));
         var audio = new Audio('./sounds/unlock.mp3');
         audio.play();
         homeScreen();

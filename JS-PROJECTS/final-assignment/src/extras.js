@@ -1,7 +1,8 @@
 const emulator = document.querySelector('.emulator');
 
-let rotateDegree = 0;
-document.getElementById('rotatebtn').addEventListener('click', rotate);
+var rotateDegree = 0;
+const rotateButton = document.getElementById('rotatebtn');
+rotateButton.addEventListener('click', rotate);
 
 function rotate() {
     if (rotateDegree > 360) {

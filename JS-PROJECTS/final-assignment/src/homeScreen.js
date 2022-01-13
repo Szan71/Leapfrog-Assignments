@@ -20,6 +20,7 @@ function homeScreen() {
     });
 
 
+
     var icons = document.createElement("div");
     icons.className = 'icon-set';
     icons.style.display = 'flex';
@@ -106,6 +107,7 @@ function homeScreen() {
     calendarIcon.addEventListener('click', calendar);
 
     function calendar() {
+
         icons.style.display = 'none';
         homescreen.style.background = 'white';
 
@@ -166,6 +168,38 @@ function homeScreen() {
         evtSave.setAttribute("value", "Save");
 
         cal.init();
+
+        rotateButton.addEventListener('click', rotate);
+
+
+        function rotate() {
+            calWrap.style.position = 'absolute';
+            if (rotateDegree == 90) {
+                calWrap.style.transform = 'rotate(270deg)';
+                calWrap.style.height = '260px';
+                calWrap.style.width = '400px';
+                calWrap.style.right = '-70px';
+                calWrap.style.top = '70px';
+            } else if (rotateDegree == 270) {
+                calWrap.style.transform = 'rotate(90deg)';
+                calWrap.style.height = '260px';
+                calWrap.style.width = '400px';
+                calWrap.style.right = '-70px';
+                calWrap.style.top = '70px';
+            } else if (rotateDegree == 180) {
+                calWrap.style.transform = 'rotate(180deg)';
+                calWrap.style.height = '400px';
+                calWrap.style.width = '260px';
+                calWrap.style.right = '0px';
+                calWrap.style.top = '0px';
+            } else if (rotateDegree == 360) {
+                calWrap.style.transform = 'rotate(0deg)';
+                calWrap.style.height = '400px';
+                calWrap.style.width = '260px';
+                calWrap.style.right = '0px';
+                calWrap.style.top = '0px';
+            }
+        }
     };
 
 
@@ -217,6 +251,7 @@ function homeScreen() {
         var digitalClock = document.createElement("H1");
         clockApp.appendChild(digitalClock);
         digitalClock.style.color = 'white';
+        digitalClock.id = 'digital-clock';
         digitalClock.style.position = 'relative';
         digitalClock.style.textAlign = 'center';
         digitalClock.style.top = '50px';
@@ -247,6 +282,61 @@ function homeScreen() {
             digitalClock.innerHTML = fullTime;
 
         });
+        rotateButton.addEventListener('click', rotate);
+
+
+        function rotate() {
+            clockApp.style.position = 'absolute';
+            if (rotateDegree == 90) {
+                clockApp.style.transform = 'rotate(270deg)';
+                clockApp.style.height = '260px';
+                clockApp.style.width = '400px';
+                clockApp.style.right = '-70px';
+                clockApp.style.top = '70px';
+                clock.style.marginLeft = '89px';
+                digitalClock.style.display = 'none';
+
+            }
+            if (rotateDegree == 270) {
+                clockApp.style.transform = 'rotate(90deg)';
+                clockApp.style.height = '260px';
+                clockApp.style.width = '400px';
+                clockApp.style.right = '-70px';
+                clockApp.style.top = '70px';
+                clock.style.marginLeft = '89px';
+                digitalClock.style.display = 'none';
+            }
+            if (rotateDegree == 180) {
+                clockApp.style.transform = 'rotate(180deg)';
+                clockApp.style.height = '400px';
+                clockApp.style.width = '260px';
+                clockApp.style.right = '0px';
+                clockApp.style.top = '0px';
+                clock.style.marginLeft = '21px';
+                digitalClock.style.display = 'block';
+
+            }
+            if (rotateDegree == 360) {
+                clockApp.style.transform = 'rotate(0deg)';
+                clockApp.style.height = '400px';
+                clockApp.style.width = '260px';
+                clockApp.style.right = '0px';
+                clockApp.style.top = '0px';
+                clock.style.marginLeft = '21px';
+
+                digitalClock.style.display = 'block';
+            }
+            if (rotateDegree == 450) {
+                clockApp.style.transform = 'rotate(270deg)';
+                clockApp.style.height = '260px';
+                clockApp.style.width = '400px';
+                clockApp.style.right = '-70px';
+                clockApp.style.top = '70px';
+                clock.style.marginLeft = '89px';
+                digitalClock.style.display = 'none';
+
+            }
+        }
 
     };
 
@@ -456,6 +546,83 @@ function homeScreen() {
             song.currentTime = progressBar.value;
         };
 
+        rotateButton.addEventListener('click', rotate);
+
+
+        function rotate() {
+            player.style.position = 'absolute';
+            if (rotateDegree == 90) {
+                player.style.transform = 'rotate(270deg)';
+                player.style.height = '260px';
+                player.style.width = '400px';
+                player.style.left = '-70px';
+                player.style.top = '70px';
+                container.style.width = '400px';
+                container.style.height = '260px';
+                thumbnail.style.width = '30%';
+                play.style.bottom = '27%';
+                play.style.left = '44%';
+                forward.style.right = '30%';
+                forward.style.bottom = '30%';
+                backward.style.right = '62%';
+                backward.style.bottom = '31%';
+                input.style.left = '28%';
+                input.style.bottom = '7%';
+                currentTime.style.bottom = '-8%';
+                currentTime.style.left = '19%';
+                durationTime.style.bottom = '-8%';
+                durationTime.style.right = '14%';
+                box.style.height = '48%';
+
+            } else if (rotateDegree == 270) {
+                player.style.transform = 'rotate(90deg)';
+                player.style.height = '260px';
+                player.style.width = '400px';
+                player.style.left = '-70px';
+                player.style.top = '70px';
+                container.style.width = '400px';
+                container.style.height = '260px';
+                thumbnail.style.width = '30%';
+                play.style.bottom = '27%';
+                play.style.left = '44%';
+                forward.style.right = '30%';
+                forward.style.bottom = '30%';
+                backward.style.right = '62%';
+                backward.style.bottom = '31%';
+                input.style.left = '28%';
+                input.style.bottom = '7%';
+                currentTime.style.bottom = '-8%';
+                currentTime.style.left = '19%';
+                durationTime.style.bottom = '-8%';
+                durationTime.style.right = '14%';
+                box.style.height = '48%';
+
+            } else if (rotateDegree == 450) {
+                player.style.transform = 'rotate(270deg)';
+                player.style.height = '260px';
+                player.style.width = '400px';
+                player.style.left = '-70px';
+                player.style.top = '70px';
+                container.style.width = '400px';
+                container.style.height = '260px';
+                thumbnail.style.width = '30%';
+                play.style.bottom = '27%';
+                play.style.left = '44%';
+                forward.style.right = '30%';
+                forward.style.bottom = '30%';
+                backward.style.right = '62%';
+                backward.style.bottom = '31%';
+                input.style.left = '28%';
+                input.style.bottom = '7%';
+                currentTime.style.bottom = '-8%';
+                currentTime.style.left = '19%';
+                durationTime.style.bottom = '-8%';
+                durationTime.style.right = '14%';
+                box.style.height = '48%';
+
+            }
+        }
+
     };
 
 
@@ -563,22 +730,8 @@ function homeScreen() {
         currentTemp.style.fontWeight = '250';
 
 
-        // var weatherInput = document.createElement('input');
-        // weatherForm.appendChild(weatherInput);
-        // weatherInput.setAttribute('type', 'text');
-        // weatherInput.setAttribute('id', 'search');
-        // weatherInput.setAttribute('placeholder', 'Search by location');
-        // weatherInput.setAttribute('autocomplete', 'off');
-
-
-        // var weatherMain = document.createElement('main');
-        // weatherApp.appendChild(weatherMain);
-        // weatherMain.setAttribute('id', 'main');
-
         const apiKey = "5716b71f47305d867f16fe7d50244c20";
         const main = document.getElementById('main');
-        // const form = document.getElementById('form');
-        // const search = document.getElementById('search');
         const city = "Kathmandu";
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5716b71f47305d867f16fe7d50244c20`;
 
@@ -721,6 +874,62 @@ function homeScreen() {
         videoPlayer.appendChild(videoSource);
         videoSource.src = 'https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4';
         videoSource.setAttribute('type', 'video/mp4');
+
+        rotateButton.addEventListener('click', rotate);
+
+
+        function rotate() {
+            videoApp.style.position = 'absolute';
+            if (rotateDegree == 90) {
+                videoApp.style.transform = 'rotate(270deg)';
+                videoApp.style.height = '260px';
+                videoApp.style.width = '400px';
+                videoApp.style.left = '-70px';
+                videoApp.style.top = '70px';
+                videoPlayer.style.width = '400px';
+                videoPlayer.style.height = '260px';
+
+            }
+            if (rotateDegree == 270) {
+                videoApp.style.transform = 'rotate(90deg)';
+                videoApp.style.height = '260px';
+                videoApp.style.width = '400px';
+                videoApp.style.left = '-70px';
+                videoApp.style.top = '70px';
+                videoPlayer.style.width = '400px';
+                videoPlayer.style.height = '260px';
+
+            }
+            if (rotateDegree == 180) {
+                videoApp.style.transform = 'rotate(180deg)';
+                videoApp.style.height = '400px';
+                videoApp.style.width = '260px';
+                videoApp.style.left = '0px';
+                videoApp.style.top = '0px';
+                videoPlayer.style.width = '260px';
+                videoPlayer.style.height = '400px';
+
+            }
+            if (rotateDegree == 360) {
+                videoApp.style.transform = 'rotate(0deg)';
+                videoApp.style.height = '400px';
+                videoApp.style.width = '260px';
+                videoApp.style.left = '0px';
+                videoApp.style.top = '0px';
+                videoPlayer.style.width = '260px';
+                videoPlayer.style.height = '400px';
+            }
+            if (rotateDegree == 450) {
+                videoApp.style.transform = 'rotate(270deg)';
+                videoApp.style.height = '260px';
+                videoApp.style.width = '400px';
+                videoApp.style.left = '-70px';
+                videoApp.style.top = '70px';
+                videoPlayer.style.width = '400px';
+                videoPlayer.style.height = '260px';
+
+            }
+        }
     };
 
     // Photo Viewer
@@ -1049,14 +1258,14 @@ function homeScreen() {
         const CANVAS_WIDTH = 260; //Width of our canvas
         const CANVAS_HEIGHT = 400; //Height of our canvas
         const FLAPPING = 5; //to move at 7 frame/sec
-        const W = 288,
+        const W = 260,
             H = 400; //Playground Width and Height
         const BIRD_WIDTH = 34; //Bird Width
         const BIRD_HEIGHT = 26; //Bird Height
         const PIPE_WIDTH = 52; //Our Pipe Width 
         const GRAVITY = -0.2; //the speed at the which bird flew down
         const SPEED = 2.0; //speed at which it move
-        const PIPE_SPACING = 100; //space adjacent pipes
+        const PIPE_SPACING = 120; //space adjacent pipes
         const TWO_PIPE_HEIGHT_DIFF = 100; //difference in shape between top and down pipe
 
         // playground

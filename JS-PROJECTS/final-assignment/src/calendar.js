@@ -182,7 +182,6 @@ var cal = {
     save: () => {
         cal.data[cal.sDay] = cal.hfTxt.value;
         localStorage.setItem(`cal-${cal.sMth}-${cal.sYear}`, JSON.stringify(cal.data));
-        console.log('Hello World!');
         cal.list();
         return false;
     },
