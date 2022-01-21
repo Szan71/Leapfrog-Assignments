@@ -1437,7 +1437,7 @@ function homeScreen() {
         }
 
 
-        //function where we initiating the bird position and definning its assets
+        //function where we initiating the bird position and defining its assets
         function init() {
             bird = {
                 x: W / 2 - BIRD_WIDTH / 2,
